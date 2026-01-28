@@ -23,7 +23,7 @@
 
     <div>
 
-        <div>
+        <div class="primeiro">
             <form action="">
                 <label>
                     <input type="text" placeholder="Nome completo">
@@ -55,11 +55,13 @@
 
             <h2>É possível melhorá-los?</h2>
 
+            <button class="proximo">Proximo</button>
+
         </div>
 
-        <div>
+        <div class="hidden segundo">
             <h2>Comprometimento e determinação</h2>
-            <table>
+            <table border="2">
                 <tr>
                     <th>Características</th>
                     <th>Excelente</th>
@@ -67,6 +69,7 @@
                     <th>Regular</th>
                     <th>Fraco</th>
                     <th>Insuficiente</th>
+                    <th>Nota</th>
                 </tr>
                 <tr>
                     <td>1. Proatividade na tomada de decisão</td>
@@ -75,6 +78,7 @@
                     <td><input type="radio" name="1" id="regular" value='3'></td>
                     <td><input type="radio" name="1" id="fraco" value='2'></td>
                     <td><input type="radio" name="1" id="insuficiente" value='1'></td>
+                    <td>0</td>
                 </tr>
                 <tr>
                     <td>2. Tenacidade, obstinação</td>
@@ -83,6 +87,7 @@
                     <td><input type="radio" name="2" id="regular" value='3'></td>
                     <td><input type="radio" name="2" id="fraco" value='2'></td>
                     <td><input type="radio" name="2" id="insuficiente" value='1'></td>
+                    <td>0</td>
                 </tr>
                 <tr>
                     <td>3. Disciplina, dedicação</td>
@@ -91,6 +96,7 @@
                     <td><input type="radio" name="3" id="regular" value='3'></td>
                     <td><input type="radio" name="3" id="fraco" value='2'></td>
                     <td><input type="radio" name="3" id="insuficiente" value='1'></td>
+                    <td>0</td>
                 </tr>
                 <tr>
                     <td>4. Persistência em resolver problemas</td>
@@ -99,6 +105,7 @@
                     <td><input type="radio" name="4" id="regular" value='3'></td>
                     <td><input type="radio" name="4" id="fraco" value='2'></td>
                     <td><input type="radio" name="4" id="insuficiente" value='1'></td>
+                    <td>0</td>
                 </tr>
                 <tr>
                     <td>5. Disposição ao sacrifício para atingir metas</td>
@@ -107,6 +114,7 @@
                     <td><input type="radio" name="5" id="regular" value='3'></td>
                     <td><input type="radio" name="5" id="fraco" value='2'></td>
                     <td><input type="radio" name="5" id="insuficiente" value='1'></td>
+                    <td>0</td>
                 </tr>
                 <tr>
                     <td>6. Imersão total nas atividades que desenvolve</td>
@@ -115,11 +123,18 @@
                     <td><input type="radio" name="6" id="regular" value='3'></td>
                     <td><input type="radio" name="6" id="fraco" value='2'></td>
                     <td><input type="radio" name="6" id="insuficiente" value='1'></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td colspan="4"> 0 </td>
                 </tr>
             </table>
+
+            <button class="proximo">Proximo</button>
         </div>
 
-        <div>
+        <div class="hidden terceiro">
             <h2>Obsessão pelas oportunidades</h2>
             <table>
                 <tr>
@@ -156,9 +171,10 @@
                 </tr>
 
             </table>
+            <button class="proximo">Proximo</button>
         </div>
 
-        <div>
+        <div class="hidden quarto">
             <h2>Tolerância ao risco, ambigüidade e incertezas</h2>
             <table>
                 <tr>
@@ -211,9 +227,10 @@
                 </tr>
 
             </table>
+            <button class="proximo">Proximo</button>
         </div>
 
-        <div>
+        <div class="hidden quinto">
             <h2>Criatividade, auto-confiança e habilidade de adaptação</h2>
             <table>
                 <tr>
@@ -266,9 +283,10 @@
                 </tr>
 
             </table>
+            <button class="proximo">Proximo</button>
         </div>
 
-        <div>
+        <div class="hidden sexto">
             <h2>Motivação e superação</h2>
             <table>
                 <tr>
@@ -329,9 +347,10 @@
                 </tr>
 
             </table>
+            <button class="proximo">Proximo</button>
         </div>
 
-        <div>
+        <div class="hidden setimo">
             <h2>Liderança</h2>
             <table>
                 <tr>
@@ -384,6 +403,36 @@
                 </tr>
 
             </table>
+            <button class="proximo">Proximo</button>
+        </div>
+
+        <div class="hidden oitavo">
+            <h2>Análise de desempenho</h2>
+            <button class="proximo">Proximo</button>
+        </div>
+
+        <div class="hidden nono">
+            <h2>Principais pontos fortes (Insira os títulos acima com maior pontuação)</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button class="proximo">Proximo</button>
+        </div>
+
+        <div class="hidden decimo">
+            <h2>Principais pontos fracos (Insira os títulos acima com menor pontuação)</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button class="proximo">Proximo</button>
+        </div>
+
+        <div class="hidden undecimo">
+            <h2>Definição de estratégia a seguir</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button class="proximo">Proximo</button>
+        </div>
+
+        <div class="hidden duodecimo">
+            <h2>Resultados desejados e prazo para alcançá-los:</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button class="proximo">Proximo</button>
         </div>
 
     </div>

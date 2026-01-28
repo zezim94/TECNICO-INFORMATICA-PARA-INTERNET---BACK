@@ -21,3 +21,7 @@ body{
     gap: 50px;
     margin-top: 220px;
 }
+
+.hidden{
+    display: none;
+}
