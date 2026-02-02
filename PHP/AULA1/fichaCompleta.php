@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ficha Completa</title>
 </head>
+
 <body>
 
-<?php
+    <?php
 
-$name = "Andelson";
-$age = 31;
-$cidade = "Cubatão";
-$salario = 20000;
+    $name = "Andelson";
+    $age = 31;
+    $cidade = "Cubatão";
+    $salario = 20000;
 
-echo "<hr>";
+    echo "<hr>";
 
-$ficha = "Meu nome é {$name} e tenho {$age} anos, moro em {$cidade} e ganho R$ {$salario},00 por mes";
+    $ficha = "Meu nome é {$name} e tenho {$age} anos, moro em {$cidade} e ganho R$ {$salario},00 por mes";
 
-echo $ficha;
+    echo $ficha;
 
-echo "<hr>";
+    echo "<hr>";
 
-$ficha2 = "Meu nome é " . $name . " e tenho " . $age . " anos, moro em " . $cidade . " e ganho R$ " . $salario . ",00 por mes";
+    $ficha2 = "Meu nome é " . $name . " e tenho " . $age . " anos, moro em " . $cidade . " e ganho R$ " . $salario . ",00 por mes";
 
-echo $ficha2;
+    echo $ficha2;
 
-echo "<hr>";
+    echo "<hr>";
 
-echo $ficha3 ?? "nao existe";
+    $ficha3 = "Meu nome é: <strong> {$name} </strong>\n";
+    $ficha3 .= "Tenho {$age} anos\n";
+    $ficha3 .= "Moro em {$cidade}\n";
+    $ficha3 .= "Ganho R$ {$salario},00 por mes\n";
 
-?>
-    
+    echo $ficha3 ?? "nao existe";
+
+    echo "<hr>";
+
+    $ficha4 = "Meu nome é: <strong> {$name} </strong>, tenho {$age} anos, moro em {$cidade} e ganho R$ {$salario},00 por mes";
+
+    echo $ficha4 ?? "nao existe";
+
+    ?>
+
 </body>
+
 </html>
