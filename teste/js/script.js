@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".nono"), // Índice 8: Pontos Fortes
     document.querySelector(".decimo"), // Índice 9: Pontos Fracos
     document.querySelector(".undecimo"), // Índice 10: Estratégia
-    document.querySelector(".duodecimo"), // Índice 11: Impressão/Final
+    document.querySelector(".duodecimo"), // Índice 11: Final/Salvar
   ];
 
   const progressIndicators = document.querySelectorAll("#container div");
@@ -93,8 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2000);
         return false;
       }
-      if (aviso) aviso.textContent = "";
-      return true;
     }
 
     const tabelasIndices = [1, 2, 3, 4, 5, 6];

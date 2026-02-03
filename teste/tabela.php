@@ -1,0 +1,9 @@
+<tr>
+    <th>Características</th>
+    <th>Excelente</th>
+    <th>Bom</th>
+    <th>Regular</th>
+    <th>Fraco</th>
+    <th>Insuficiente</th>
+    <th>Nota</th>
+</tr>

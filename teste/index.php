@@ -69,16 +69,8 @@
 
         <div class="hidden segundo">
             <h2>Comprometimento e determinação</h2>
-            <table border="2">
-                <tr>
-                    <th>Características</th>
-                    <th>Excelente</th>
-                    <th>Bom</th>
-                    <th>Regular</th>
-                    <th>Fraco</th>
-                    <th>Insuficiente</th>
-                    <th>Nota</th>
-                </tr>
+            <table>
+                <?php include 'tabela.php'; ?>
                 <tr>
                     <td>1. Proatividade na tomada de decisão</td>
                     <td><input type="radio" name="1" value='5'></td>
@@ -147,15 +139,7 @@
         <div class="hidden terceiro">
             <h2>Obsessão pelas oportunidades</h2>
             <table>
-                <tr>
-                    <th>Características</th>
-                    <th>Excelente</th>
-                    <th>Bom</th>
-                    <th>Regular</th>
-                    <th>Fraco</th>
-                    <th>Insuficiente</th>
-                    <th>Nota</th>
-                </tr>
+                <?php include 'tabela.php'; ?>
                 <tr>
                     <td>7. Procura ter conhecimento profundo das necessidades dos clientes</td>
                     <td><input type="radio" name="7" value='5'></td>
@@ -197,15 +181,7 @@
         <div class="hidden quarto">
             <h2>Tolerância ao risco, ambigüidade e incertezas</h2>
             <table>
-                <tr>
-                    <th>Características</th>
-                    <th>Excelente</th>
-                    <th>Bom</th>
-                    <th>Regular</th>
-                    <th>Fraco</th>
-                    <th>Insuficiente</th>
-                    <th>Nota</th>
-                </tr>
+                <?php include 'tabela.php'; ?>
                 <tr>
                     <td>10. Toma riscos calculados</td>
                     <td><input type="radio" name="10" value='5'></td>
@@ -265,15 +241,7 @@
         <div class="hidden quinto">
             <h2>Criatividade, auto-confiança e adaptação</h2>
             <table>
-                <tr>
-                    <th>Características</th>
-                    <th>Excelente</th>
-                    <th>Bom</th>
-                    <th>Regular</th>
-                    <th>Fraco</th>
-                    <th>Insuficiente</th>
-                    <th>Nota</th>
-                </tr>
+                <?php include 'tabela.php'; ?>
                 <tr>
                     <td>15. Não convencional, cabeça aberta</td>
                     <td><input type="radio" name="15" value='5'></td>
@@ -333,15 +301,7 @@
         <div class="hidden sexto">
             <h2>Motivação e superação</h2>
             <table>
-                <tr>
-                    <th>Características</th>
-                    <th>Excelente</th>
-                    <th>Bom</th>
-                    <th>Regular</th>
-                    <th>Fraco</th>
-                    <th>Insuficiente</th>
-                    <th>Nota</th>
-                </tr>
+                <?php include 'tabela.php'; ?>
                 <tr>
                     <td>20. Orientação a metas e resultados</td>
                     <td><input type="radio" name="20" value='5'></td>
@@ -410,15 +370,7 @@
         <div class="hidden setimo">
             <h2>Liderança</h2>
             <table>
-                <tr>
-                    <th>Características</th>
-                    <th>Excelente</th>
-                    <th>Bom</th>
-                    <th>Regular</th>
-                    <th>Fraco</th>
-                    <th>Insuficiente</th>
-                    <th>Nota</th>
-                </tr>
+                <?php include 'tabela.php'; ?>
                 <tr>
                     <td>26. Tem iniciativa</td>
                     <td><input type="radio" name="26" value='5'></td>
