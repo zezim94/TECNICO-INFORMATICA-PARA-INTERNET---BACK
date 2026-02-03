@@ -88,6 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (aviso)
           aviso.textContent =
             "Por favor, preencha seu nome e e-mail antes de começar.";
+        setTimeout(() => {
+          aviso.textContent = "";
+        }, 2000);
         return false;
       }
       if (aviso) aviso.textContent = "";
