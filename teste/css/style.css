@@ -94,8 +94,7 @@ textarea {
 }
 
 /* Botões */
-button.proximo,
-button[type="submit"] {
+button.proximo {
     background-color: #3498db;
     color: white;
     padding: 10px 20px;
@@ -107,8 +106,7 @@ button[type="submit"] {
     margin: 20px auto;
 }
 
-button.proximo:hover,
-input[type="submit"]:hover {
+button.proximo:hover {
     background-color: #2980b9;
 }
 

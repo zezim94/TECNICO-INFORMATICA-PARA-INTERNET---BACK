@@ -37,7 +37,6 @@
                 <label>
                     <input type="text" placeholder="Email" required>
                 </label>
-                <button type="submit">Enviar</button>
             </form>
 
             <p>
