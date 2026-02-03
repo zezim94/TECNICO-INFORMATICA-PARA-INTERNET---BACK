@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressIndicators = document.querySelectorAll("#container div");
 
   let currentStepIndex = 0;
-
+  
   const STORAGE_KEY = "empreendedor_profile_v3";
 
   function showStep(index) {
