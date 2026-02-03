@@ -1,4 +1,3 @@
-/* style.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -68,10 +67,10 @@ th {
 
 td:first-child {
     text-align: left;
-    /* Alinha as perguntas à esquerda */
+
 }
 
-/* Formulário inicial e inputs */
+
 .primeiro form {
     display: flex;
     flex-direction: column;
@@ -113,25 +112,23 @@ input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-/* Classe utilitária para esconder seções */
+
 .hidden {
     display: none !important;
 }
 
-/* --- Adicione ou substitua no seu style.css --- */
 
-/* Área de botões de navegação */
 .botoes-nav {
     display: flex;
     justify-content: space-between;
-    /* Separa os botões */
+
     margin-top: 20px;
 }
 
-/* Estilo do botão Voltar */
+
 button.voltar {
     background-color: #95a5a6;
-    /* Cinza */
+
     color: white;
     padding: 10px 20px;
     border: none;
@@ -144,23 +141,20 @@ button.voltar:hover {
     background-color: #7f8c8d;
 }
 
-/* Ocultar o botão voltar na primeira tela se necessário via JS, 
-   mas via HTML apenas não colocamos ele na primeira div */
 
-/* Estilo para a Célula de Nota (última coluna) */
 td.nota-valor {
     font-weight: bold;
     color: #2980b9;
     font-size: 1.1em;
 }
 
-/* Estilo para a linha de Total da Tabela */
+
 tr.total-row {
     background-color: #ecf0f1;
     font-weight: bold;
 }
 
-/* Estilo para a caixa de resultado final */
+
 #resultado-texto {
     background-color: #fff;
     padding: 20px;
@@ -180,21 +174,21 @@ tr.total-row {
     margin-bottom: 15px;
 }
 
-/* Estilo para o passo concluído (Check) */
+
 #container div.completed {
     background-color: #27ae60;
-    /* Verde */
+
     color: white;
     border-color: #27ae60;
 }
 
-/* Garante que o indicador mantenha o formato redondo */
+
 #container div {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: #bdc3c7;
-    /* Cinza padrão */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,9 +200,9 @@ tr.total-row {
 
 #container div.active {
     background-color: #3498db;
-    /* Azul (Atual) */
+
     transform: scale(1.1);
-    /* Um leve destaque no atual */
+
 }
 
 #aviso {
@@ -237,7 +231,7 @@ span {
     z-index: 1000;
 }
 
-/* opcional: fundo escurecido */
+
 .clicado::before {
     content: "";
     position: fixed;
@@ -247,6 +241,6 @@ span {
     z-index: -1;
 }
 
-#finalizar{
+#finalizar {
     background-color: #16e620;
 }
