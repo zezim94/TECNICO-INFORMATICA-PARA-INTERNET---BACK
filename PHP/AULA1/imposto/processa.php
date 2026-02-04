@@ -7,16 +7,32 @@ if($salario <= 2428.80){
     echo "Isento <br>";
 } else if($salario <= 2826.65){
     echo "7,5% <br>";
+    echo $salario;
+    echo "<br>";
     echo "Desconto: R$ ". $salario * 0.075;
+    echo "<br>";
+    echo "Salário liquido: R$ ". $salario - ($salario * 0.075);
 } else if($salario <= 3751.05){
     echo "15,0% <br>";
+    echo $salario;
+    echo "<br>";
     echo "Desconto: R$ ". $salario * 0.15;
+    echo "<br>";
+    echo "Salário liquido: R$ ". $salario - ($salario * 0.15);
 } else if($salario <= 4664.68){
     echo "22,5% <br>";
+    echo $salario;
+    echo "<br>";
     echo "Desconto: R$ ". $salario * 0.225;
+    echo "<br>";
+    echo "Salário liquido: R$ ". $salario - ($salario * 0.225);
 } else{
     echo "27,5% <br>";
+    echo $salario;
+    echo "<br>";
     echo  "Desconto: R$ ". $salario * 0.275;
+    echo "<br>";
+    echo "Salário liquido: R$ ". $salario - ($salario * 0.275);
 }
 
 ?>
