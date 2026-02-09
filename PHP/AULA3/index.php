@@ -8,7 +8,13 @@
 </head>
 
 <body>
-    <h1>Olá !</h1>
+    <h1>Calculadora</h1>
+
+    <form action="processa.php" method="POST">
+        <label for="numero">Digite um numero entre 0 e 10:</label>
+        <input type="number" id="numero" name="numero">
+        <button type="submit">Calcular</button>
+    </form>
 
 </body>
 
