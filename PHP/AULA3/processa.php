@@ -1,21 +1,25 @@
 <?php
+session_start();
 
 if (!empty($_POST)) {
     $numero = $_POST['numero'];
 
     if ($numero < 1 || $numero > 10) {
-        echo "Digite um número válido !!"  . "<br>";
-        echo "<a href='index.php'>Voltar</a>";
+       $_SESSION['erro'] = "Digite um número válido !!"  . "<br>";
+        header("Location: index.php");
+        exit;
     } else {
-        echo "<h2> Tabuada do número {$numero} </h2>";
+        
+
+        $resultado = '';
 
         for ($i = 0; $i < 11; $i++) {
 
-            echo "{$numero} x {$i} = " . $numero * $i;
-            echo "<br>";
+            $resultado .= "{$numero} x {$i} = " . $numero * $i . '<br>';
         }
-        echo "<br>";
-        echo "<a href='index.php'>Voltar</a>";
+        $_SESSION['resultado'] = $resultado;
+        header("Location: index.php");
+        exit;
     }
 } else {
     header("Location: index.php");
