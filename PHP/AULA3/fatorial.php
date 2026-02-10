@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+</head>
+<body>
+    <form action="processaFatorial.php" method="post">
+        <label for="numero">Digite um número:</label>
+        <input type="number" name="numero" id="numero">
+        <input type="submit" value="Calcular">
+    </form>
+    
+</body>
+</html>

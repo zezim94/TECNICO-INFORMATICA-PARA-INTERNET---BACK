@@ -14,8 +14,10 @@ if (!empty($_POST)) {
             echo "{$numero} x {$i} = " . $numero * $i;
             echo "<br>";
         }
-
         echo "<br>";
         echo "<a href='index.php'>Voltar</a>";
     }
+} else {
+    header("Location: index.php");
+    exit;
 }
