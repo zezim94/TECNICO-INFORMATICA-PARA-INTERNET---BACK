@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 0 auto;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+form input[type="submit"]{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+
+}
+
+.sexo{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.group input,
+.group select
+{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+ 
+.group input:hover,
+.group select:hover,
+.sexo:hover
+{
+    border-color: #4CAF50;
+}
+
+.resultado h3, p{
+    width: 49%;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.resultado h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.resultado h3{
+    text-align: left;
+}
+
+.resultado p{
+    text-align: right;
+}
+
+
+
+
+
