@@ -4,154 +4,315 @@ session_start();
 
 $personagem = $_POST['personagem'];
 
-function Pigsaw($dados)
+function freddyKrueger($dados)
 {
 
-    $img = "img/Pigsaw.png";
+    $img = 'img/FreddyKrueger.webp';
 
-    $indentidade[] = [
-        "Nome verdadeiro" => "John Kramer",
-        "Apelido" => "Pigsaw",
-        "Arma" => "Armadilha",
-        "Filme" => "Jogos Mortais",
-        "descricao" => "Pigsaw é um boneco de madeira que usa uma máscara de porco e é conhecido por seus jogos mortais.",
+    $nome = 'Freddy Krueger';
+
+    $descricao = 'Assassino que ataca suas vítimas nos sonhos.';
+
+    $caracteristicas[] = [
+        '1' => 'Rosto queimado',
+        '2' => 'Suéter listrado vermelho e verde',
+        '3' => 'Chapéu fedora',
+        '4' => 'Luva com lâminas'
     ];
 
-    $perfil[] = [
-        "1" => "Extremamente inteligente, engenheiro civil de formação.",
-        "2" => "Diagnosticado com câncer terminal, o que influencia sua visão distorcida sobre a vida.",
-        "3" => "Acredita que as pessoas não valorizam a própria vida e cria “jogos” para forçá-las a provar que querem viver.",
-        "4" => "Não se vê como assassino — diz que dá às vítimas uma “chance” de sobrevivência.",
-    ];
+    $resumo = 'Após ser morto por pais vingativos, Freddy retorna como entidade sobrenatural que mata adolescentes enquanto dormem, na franquia A Hora do Pesadelo.';
 
     $_SESSION['img'] = $img;
-    $_SESSION['indentidade'] = $indentidade;
-    $_SESSION['perfil'] = $perfil;
-    header("Location: index.php");
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'FreddyKrueger';
+
+    header('Location: index.php');
 }
 
-function Jason($dados)
+function jasonVoorhees($dados)
 {
 
-    $img = "img/Jason.jpg";
+    $img = 'img/JasonVoorhees.avif';
 
-    $indentidade[] = [
-        "Nome verdadeiro" => "Jason Voorhees",
-        "Franquia" => "Sexta-Feira 13 (Friday the 13th)",
-        "Primeira aparição" => "Friday the 13th (1980)",
-        "Intérpretes marcantes" => "Ari Lehman (criança), Kane Hodder (vários filmes)",
+    $nome = 'Jason Voorhees';
+
+    $descricao = 'Assassino silencioso do acampamento Crystal Lake.';
+
+    $caracteristicas[] = [
+        '1' => 'Máscara de hóquei',
+        '2' => 'força sobre-humana',
+        '3' => 'uso de facão'
     ];
 
-    $perfil[] = [
-        "1" => "Altura e porte físico grandes e intimidador.",
-        "2" => "Usa máscara de hóquei (a partir do 3º filme).",
-        "3" => "Roupas simples, geralmente jaqueta e calça escuras.",
-        "4" => "Aparência deformada sob a máscara.",
-    ];
+    $resumo = 'Considerado morto quando criança, Jason retorna para se vingar de todos que se aproximam do lago onde teria se afogado.';
 
     $_SESSION['img'] = $img;
-    $_SESSION['indentidade'] = $indentidade;
-    $_SESSION['perfil'] = $perfil;
-    header("Location: index.php");
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'JasonVoorhees';
+
+    header('Location: index.php');
 }
 
-function Terrifier($dados)
+function michaelMyers($dados)
 {
 
-    $img = "img/Terrifier.jpg";
+    $img = 'img/MichaelMyers.jpg';
 
-    $indentidade[] = [
-        "Nome verdadeiro" => "Art the Clown",
-        "Franquia" => "Terrifier",
-        "Primeira aparição" => "Terrifier (2016)",
-        "Intérpretes marcantes" => "David Howard Thornton",
+    $nome = 'Michael Myers';
+
+    $descricao = 'Assassino mascarado conhecido como “A Forma”';
+
+    $caracteristicas[] = [
+        '1' => 'Máscara branca sem expressão',
+        '2' => 'fmacacão azul',
+        '3' => 'comportamento silencioso.'
     ];
 
-    $perfil[] = [
-        "1" => "Totalmente mudo (não fala nenhuma palavra).",
-        "2" => "Extremamente sádico e gosta de provocar as vítimas.",
-        "3" => "Demonstra humor sombrio, fazendo mímicas e caretas antes e durante os ataques.",
-        "4" => "Parece se divertir com o sofrimento.",
-    ];
+    $resumo = 'Após matar a própria irmã quando criança, escapa de um hospital psiquiátrico e passa a perseguir Laurie Strode.';
 
     $_SESSION['img'] = $img;
-    $_SESSION['indentidade'] = $indentidade;
-    $_SESSION['perfil'] = $perfil;
-    header("Location: index.php");
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'MichaelMyers';
+
+    header('Location: index.php');
 }
 
-function It($dados)
+function pennywise($dados)
+{
+    $img = 'img/Pennywise.jpg';
+
+    $nome = 'Pennywise';
+
+    $descricao = 'Entidade cósmica que assume a forma de palhaço.';
+
+    $caracteristicas[] = [
+        '1' => 'Balão vermelho',
+        '2' => 'sorriso macabro',
+        '3' => 'manipulação de medos'
+    ];
+
+    $resumo = 'Em It, aterroriza as crianças da cidade de Derry, alimentando-se do medo delas.';
+
+    $_SESSION['img'] = $img;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'Pennywise';
+
+    header('Location: index.php');
+}
+
+function chucky($dados)
 {
 
-    $img = "img/It.jpg";
+    $img = 'img/Chucky.jpeg';
 
-    $indentidade[] = [
-        "Nome verdadeiro" => "Desconhecido (entidade cósmica chamada “IT”)",
-        "Franquia" => "It",
-        "Forma mais conhecida" => "Pennywise, o Palhaço Dançarino",
-        "Criador" => "Stephen King",
+    $nome = 'Chucky';
+
+    $descricao = 'Boneco possuído por um assassino em série.';
+
+    $caracteristicas[] = [
+        '1' => 'Aparência infantil',
+        '2' => 'faca na mão',
+        '3' => 'humor sarcástico'
     ];
 
-    $perfil[] = [
-        "1" => " Metamorfose (pode assumir a forma do maior medo da vítima).",
-        "2" => "Manipulação psicológica.",
-        "3" => "Ilusões extremamente realistas.",
-        "4" => "Influência mental sobre a cidade de Derry.",
-    ];
+    $resumo = 'O espírito do criminoso Charles Lee Ray transfere sua alma para um boneco, iniciando uma série de assassinatos.';
 
     $_SESSION['img'] = $img;
-    $_SESSION['indentidade'] = $indentidade;
-    $_SESSION['perfil'] = $perfil;
-    header("Location: index.php");
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'Chucky';
+
+    header('Location: index.php');
 }
 
-function Chucky()
+function leatherface($dados)
 {
 
-    $img = "img/Chucky.jpg";
+    $img = 'img/Leatherface.webp';
 
-    $indentidade[] = [
-        "Nome verdadeiro" => "Charles Lee Ray",
-        "Apelido" => "Chucky",
-        "Primeira aparição" => "Child’s Play (1988)",
-        "Criador" => "Don Mancini",
-        "Ator de voz (original)" => "Brad Dourif",
+    $nome = 'Leatherface';
+
+    $descricao = 'Assassino canibal do interior do Texas.';
+
+    $caracteristicas[] = [
+        '1' => 'Máscara feita de pele humana',
+        '2' => 'motosserrra',
+        '3' => 'comportamento brutal'
     ];
 
-    $perfil[] = [
-        "1" => " Metamorfose (pode assumir a forma do maior medo da vítima).",
-        "2" => "Manipulação psicológica.",
-        "3" => "Ilusões extremamente realistas.",
-        "4" => "Influência mental sobre a cidade de Derry.",
-    ];
+    $resumo = 'Membro de uma família perturbada, caça viajantes que cruzam seu caminho.';
 
     $_SESSION['img'] = $img;
-    $_SESSION['indentidade'] = $indentidade;
-    $_SESSION['perfil'] = $perfil;
-    header("Location: index.php");
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'Leatherface';
+
+    header('Location: index.php');
 }
 
-function FreddyKrueger() {}
+function ghostface($dados)
+{
+
+    $img = 'img/Ghostface.jpg';
+
+    $nome = 'Ghostface';
+
+    $descricao = 'Assassino mascarado da franquia Pânico.';
+
+    $caracteristicas[] = [
+        '1' => 'Máscara branca alongada',
+        '2' => 'manto preto',
+        '3' => 'ligações ameaçadoras'
+    ];
+
+    $resumo = 'Diferentes pessoas assumem a identidade de Ghostface para cometer assassinatos inspirados em filmes de terror.';
+
+    $_SESSION['img'] = $img;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'Ghostface';
+
+    header('Location: index.php');
+}
+
+function reganMacNeil($dados)
+{
+
+    $img = 'img/ReganMacNeil.jpg';
+
+    $nome = 'Regan MacNeil';
+
+    $descricao = 'Menina possuída por uma entidade demoníaca.';
+
+    $caracteristicas[] = [
+        '1' => 'Voz alterada',
+        '2' => 'comportamento agressivo',
+        '3' => 'fenômenos sobrenaturais'
+    ];
+
+    $resumo = 'Em O Exorcista, sua possessão leva dois padres a realizarem um exorcismo dramático.';
+
+    $_SESSION['img'] = $img;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'ReganMacNeil';
+
+    header('Location: index.php');
+}
+
+function annabelle($dados)
+{
+
+    $img = 'img/Annabelle.webp';
+
+    $nome = 'Annabelle';
+
+    $descricao = 'Boneca supostamente possuída por entidade demoníaca.';
+
+    $caracteristicas[] = [
+        '1' => 'Aparência infantil perturbadora',
+        '2' => 'presença silenciosa',
+        '3' => 'eventos paranormais'
+    ];
+
+    $resumo = 'Parte do universo Invocação do Mal, está ligada a diversos acontecimentos sobrenaturais investigados pelos Warren.';
+
+    $_SESSION['img'] = $img;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'Annabelle';
+
+    header('Location: index.php');
+}
+
+function samaraMorgan($dados)
+{
+
+    $img = 'img/SamaraMorgan.webp';
+
+    $nome = 'Samara Morgan';
+
+    $descricao = 'Espírito vingativo ligado a uma fita amaldiçoada.';
+
+    $caracteristicas[] = [
+        '1' => 'Cabelos longos cobrindo o rosto',
+        '2' => 'vestido branco sujo',
+        '3' => 'aparição em telas'
+    ];
+
+    $resumo = 'Quem assiste ao vídeo amaldiçoado recebe uma ligação dizendo que morrerá em sete dias.';
+
+    $_SESSION['img'] = $img;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['descricao'] = $descricao;
+    $_SESSION['caracteristicas'] = $caracteristicas;
+    $_SESSION['resumo'] = $resumo;
+    $_SESSION['personagem'] = 'SamaraMorgan';
+
+    header('Location: index.php');
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $personagem = $_POST['personagem'];
+
+    if ($personagem == '') {
+        header('Location: index.php');
+        exit;
+    }
+
+    $dados = $_POST;
     switch ($personagem) {
-        case 'Pigsaw':
-            Pigsaw($_POST);
+        case 'FreddyKrueger':
+            freddyKrueger($_POST);
             break;
-        case 'Jason':
-            Jason($_POST);
+        case 'JasonVoorhees':
+            jasonVoorhees($_POST);
             break;
-        case 'Terrifier':
-            Terrifier($_POST);
+        case 'MichaelMyers':
+            michaelMyers($_POST);
             break;
-        case 'It':
-            It($_POST);
+        case 'Pennywise':
+            pennywise($_POST);
             break;
         case 'Chucky':
-            Chucky();
+            chucky($_POST);
             break;
-        case 'FreddyKrueger':
-            FreddyKrueger();
+        case 'Leatherface':
+            leatherface($_POST);
+            break;
+        case 'Ghostface':
+            ghostface($_POST);
+            break;
+        case 'ReganMacNeil':
+            reganMacNeil($_POST);
+            break;
+        case 'Annabelle':
+            annabelle($_POST);
+            break;
+        case 'SamaraMorgan':
+            samaraMorgan($_POST);
             break;
     }
 }

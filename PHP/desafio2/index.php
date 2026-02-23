@@ -1,7 +1,6 @@
 <?php
-
 session_start();
-
+$selecionado = $_SESSION['personagem'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -16,43 +15,67 @@ session_start();
 
 <body>
 
-    <form action="funcao.php" method="POST">
-        <select name="personagem" id="personagem">
-            <option value="#">Selecione um personagem</option>
-            <option name="Pigsaw" value="Pigsaw">Pigsaw</option>
-            <option name="Jason" value="Jason">Jason</option>
-            <option name="Terrifier" value="Terrifier">Terrifier</option>
-            <option name="It" value="It">It</option>
-            <option name="Chucky" value="Chucky">Chucky</option>
-            <option name="FreddyKrueger" value="FreddyKrueger">Freddy Krueger</option>
+    <div class="container">
+        <form action="funcao.php" method="POST">
+            <select name="personagem" id="personagens">
+                <option value="">Selecione um personagem...</option>
+                <option value="FreddyKrueger" <?= $selecionado == 'FreddyKrueger' ? 'selected' : '' ?>>Freddy Krueger
+                </option>
+                <option value="JasonVoorhees" <?= $selecionado == 'JasonVoorhees' ? 'selected' : '' ?>>Jason Voorhees
+                </option>
+                <option value="MichaelMyers" <?= $selecionado == 'MichaelMyers' ? 'selected' : '' ?>>Michael Myers</option>
+                <option value="Pennywise" <?= $selecionado == 'Pennywise' ? 'selected' : '' ?>>Pennywise</option>
+                <option value="Chucky" <?= $selecionado == 'Chucky' ? 'selected' : '' ?>>Chucky</option>
+                <option value="Leatherface" <?= $selecionado == 'Leatherface' ? 'selected' : '' ?>>Leatherface</option>
+                <option value="Ghostface" <?= $selecionado == 'Ghostface' ? 'selected' : '' ?>>Ghostface</option>
+                <option value="ReganMacNeil" <?= $selecionado == 'ReganMacNeil' ? 'selected' : '' ?>>Regan MacNeil</option>
+                <option value="Annabelle" <?= $selecionado == 'Annabelle' ? 'selected' : '' ?>>Annabelle</option>
+                <option value="SamaraMorgan" <?= $selecionado == 'SamaraMorgan' ? 'selected' : '' ?>>Samara Morgan</option>
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
 
-        </select>
-        <button type="submit">Enviar</button>
-    </form>
+        <div class="exibir">
+            <?php
 
-    <div class="exibir">
+            if (isset($_SESSION['img'])) { ?>
+                <div class="img">
+                    <img src=" <?= $_SESSION['img'] ?> " alt=" <?= $_SESSION['nome'] ?> ">
 
-        <?php
-        if (isset($_SESSION['img'])) {
-            echo '<img src="' . $_SESSION['img'] . '" alt="" width="100px">';
-        }
+                    <div class="nome">
+                        <p> <?= $_SESSION['nome'] ?> </p>
+                    </div>
+                </div>
 
-        if (isset($_SESSION['indentidade'])) {
-            foreach ($_SESSION['indentidade'] as  $value) {
-                foreach ($value as $key => $value) {
-                    echo '<p>' . $key . ': ' . $value . '</p>';
-                }
+                <div class="detalhes">
+                    <div class="descricao">
+                        <h3>Descrição:</h3>
+                        <p> <?= $_SESSION['descricao'] ?> </p>
+                    </div>
+
+                    <div class="caracteristicas">
+                        <h3>Caracteristicas:</h3>
+                        <p> <?php
+                        foreach ($_SESSION['caracteristicas'] as $value) {
+                            foreach ($value as $v) {
+                                echo $v . "<br>";
+                            }
+                        }
+
+                        ?> </p>
+                    </div>
+
+                    <div class="resumo">
+                        <h3>Resumo:</h3>
+                        <p> <?= $_SESSION['resumo'] ?> </p>
+                    </div>
+                </div>
+
+                <?php
             }
-        }
 
-        if (isset($_SESSION['perfil'])) {
-            foreach ($_SESSION['perfil'] as $value) {
-                foreach($value as $key => $value){
-                    echo '<p>'  . $value . '</p>';
-                }
-            }
-        }
-        ?>
+            ?>
+        </div>
     </div>
 
 </body>
