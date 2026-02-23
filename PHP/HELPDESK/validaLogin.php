@@ -54,7 +54,7 @@ foreach ($usuarios as $user) {
     if ($usuario_autenticado) {
         $_SESSION['autenticado'] = true;
         header("Location: home.php");
-
+        
     } else {
         header("Location: index.php");
         $_SESSION['autenticado'] = false;

@@ -25,7 +25,7 @@ include('verificaLogin.php');
 
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-      <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
       App Help Desk
     </a>
 
@@ -44,7 +44,6 @@ include('verificaLogin.php');
 
           <?php if (isset($_SESSION['nome'])) {
 
-
             echo "<h2 class='text-center'>Bem-vindo, " . $_SESSION['nome'] . "!</h2>";
           } ?>
           <div class="card-header">
@@ -54,12 +53,12 @@ include('verificaLogin.php');
             <div class="row">
               <div class="col-6 d-flex justify-content-center">
                 <a href="abrir_chamado.php">
-                  <img src="formulario_abrir_chamado.png" width="70" height="70">
+                  <img src="img/formulario_abrir_chamado.png" width="70" height="70">
                 </a>
               </div>
               <div class="col-6 d-flex justify-content-center">
                 <a href="consultar_chamado.php">
-                  <img src="formulario_consultar_chamado.png" width="70" height="70">
+                  <img src="img/formulario_consultar_chamado.png" width="70" height="70">
                 </a>
               </div>
             </div>
@@ -67,6 +66,23 @@ include('verificaLogin.php');
         </div>
       </div>
     </div>
+
+    <?php if (isset($_SESSION['titulo'])) { ?>
+
+      <h2 class='text-center'>Chamados</h2>
+      <p><?= $_SESSION['titulo'] ?></p>
+    <?php } ?>
+
+    <?php if (isset($_SESSION['descricao'])) { ?>
+
+
+      <p><?= $_SESSION['descricao'] ?></p>
+    <?php } ?>
+
+    <?php if (isset($_SESSION['categoria'])) { ?>
+
+      <p><?= $_SESSION['categoria'] ?></p>
+    <?php } ?>
 </body>
 
 </html>

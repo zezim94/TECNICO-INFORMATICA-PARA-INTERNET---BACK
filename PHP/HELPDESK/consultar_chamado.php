@@ -1,3 +1,6 @@
+<?php
+include('verificaLogin.php');
+?>
 <html>
 
 <head>
@@ -19,7 +22,7 @@
 
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
-      <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
       App Help Desk
     </a>
   </nav>
@@ -55,7 +58,7 @@
 
             <div class="row mt-5">
               <div class="col-6">
-                <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
+                <a href="home.php" class="btn btn-lg btn-warning btn-block">Voltar</a>
               </div>
             </div>
           </div>
