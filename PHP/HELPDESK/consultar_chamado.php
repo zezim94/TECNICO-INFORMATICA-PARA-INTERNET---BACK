@@ -47,7 +47,7 @@ $linhas = file('arquivo.txt');
                 continue;
               }
 
-              ?>
+            ?>
 
               <div class="card mb-3 bg-light">
                 <div class="card-body">

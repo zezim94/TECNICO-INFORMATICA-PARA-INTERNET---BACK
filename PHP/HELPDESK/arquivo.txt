@@ -3,3 +3,6 @@
 1 - Andelson - admin - Impressora - impressora - não imprime
 1 - Andelson - admin -  - criação_usuario - 
 3 - Pedro - user - Roteador - rede - O roteador não funciona
+4 - Maria - user - Celular - hardware - Quebrou a tela
+4 - Maria - user - Impressora - impressora - sem tinta
+2 - Sarah - user - Carregador - hardware - Não carrega o notebook
