@@ -2,8 +2,7 @@
 
 session_start();
 
-if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] == false) {
-  header("Location: index.php");
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] != true) {
+    header('Location: index.php');
+    exit;
 }
-
-?>
