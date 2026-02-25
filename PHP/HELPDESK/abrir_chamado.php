@@ -1,5 +1,5 @@
 <?php
-include 'verificaLogin.php';
+require_once 'verificaLogin.php';
 ?>
 
 <html>

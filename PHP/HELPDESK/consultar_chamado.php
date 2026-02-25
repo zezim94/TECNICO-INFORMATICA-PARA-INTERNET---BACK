@@ -1,7 +1,7 @@
 <?php
 include 'verificaLogin.php';
 
-$linhas = file('arquivo.txt');
+$linhas = file('../../../helpdesk/arquivo.txt');
 ?>
 
 <html>

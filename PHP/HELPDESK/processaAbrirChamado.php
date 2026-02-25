@@ -1,5 +1,5 @@
 <?php
-include 'verificaLogin.php';
+require_once 'verificaLogin.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $idUser = $_SESSION['id'];
     $nivelUser = $_SESSION['nivel'];
 
-    $arquivo = fopen('arquivo.txt', 'a');
+    $arquivo = fopen('../../../helpdesk/arquivo.txt', 'a');
 
     fwrite($arquivo, $idUser . ' - ' . $nomeUser . ' - ' . $nivelUser . ' - ' . $titulo . ' - ' . $categoria . ' - ' . $descricao . PHP_EOL);
 

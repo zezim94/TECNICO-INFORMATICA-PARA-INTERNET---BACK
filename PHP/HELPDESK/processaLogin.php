@@ -1,38 +1,40 @@
 <?php
 
-session_start();
+require_once '../../../helpdesk/processaLogin.php';
 
-$usuarios = file('login.txt');
+// session_start();
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+// $usuarios = file('login.txt');
 
-$usuarioLogado = false;
-$usuarioEncontrado = [];
+// $email = $_POST['email'];
+// $senha = $_POST['senha'];
 
-foreach ($usuarios as $user) {
+// $usuarioLogado = false;
+// $usuarioEncontrado = [];
 
-    $dados = explode(';', trim($user));
+// foreach ($usuarios as $user) {
 
-    if ($dados[3] == $email && $dados[4] == $senha) {
-        $usuarioLogado = true;
-        $usuarioEncontrado = $dados;
-        break;
-    }
-}
+//     $dados = explode(';', trim($user));
 
-if ($usuarioLogado) {
-    $_SESSION['logado'] = true;
-    $_SESSION['nome'] = $usuarioEncontrado[1];
-    $_SESSION['id'] = $usuarioEncontrado[0];
-    $_SESSION['nivel'] = $usuarioEncontrado[2];
-    header('Location: home.php');
-    exit;
+//     if ($dados[3] == $email && $dados[4] == $senha) {
+//         $usuarioLogado = true;
+//         $usuarioEncontrado = $dados;
+//         break;
+//     }
+// }
 
-} else {
-    $_SESSION['logado'] = false;
-    $_SESSION['erro'] = 'Usuario ou senha invalidos';
-    header('Location: index.php');
-    exit;
+// if ($usuarioLogado) {
+//     $_SESSION['logado'] = true;
+//     $_SESSION['nome'] = $usuarioEncontrado[1];
+//     $_SESSION['id'] = $usuarioEncontrado[0];
+//     $_SESSION['nivel'] = $usuarioEncontrado[2];
+//     header('Location: home.php');
+//     exit;
 
-}
+// } else {
+//     $_SESSION['logado'] = false;
+//     $_SESSION['erro'] = 'Usuario ou senha invalidos';
+//     header('Location: index.php');
+//     exit;
+
+// }
