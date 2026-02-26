@@ -31,11 +31,9 @@ if ($usuarioLogado) {
     $_SESSION['nivel'] = $usuarioEncontrado[2];
     header('Location: home.php');
     exit;
-
 } else {
     $_SESSION['logado'] = false;
     $_SESSION['erro'] = 'Usuario ou senha invalidos';
     header('Location: index.php');
     exit;
-
 }
