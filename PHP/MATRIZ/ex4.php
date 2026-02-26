@@ -23,7 +23,7 @@ $matriz = [
 <body>
 
     <h1>Matriz</h1>
-
+<a href="index.php" style="text-decoration: none;">voltar</a>
     <table>
 
 

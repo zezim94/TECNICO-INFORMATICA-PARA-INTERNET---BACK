@@ -26,7 +26,7 @@ $matriz = [
 <body>
 
     <h1>EX3 MATRIZ 5x3</h1>
-
+<a href="index.php" style="text-decoration: none;">voltar</a>
     <table>
 
 

@@ -30,6 +30,7 @@ $matriz = [
 <body>
 
     <h1>EX1 MATRIZ 4x4</h1>
+    <a href="index.php" style="text-decoration: none;">voltar</a>
     <table>
 
         <?php
