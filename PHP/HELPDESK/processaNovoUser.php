@@ -8,8 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = trim($_POST['senha']);
     $nivel = trim($_POST['nivel']);
 
-    $novoUser = fopen('login.txt', 'a');
-    $qtd = file('login.txt');
+    //$usuarios = file('../../../helpdesk/login.txt');
+    $novoUser = fopen('../../../helpdesk/login.txt', 'a');
+    $qtd = file('../../../helpdesk/login.txt');
     $id = count($qtd) + 1;
 
     fwrite($novoUser, $id . ';' . $nome . ';' . $nivel . ';' . $email . ';' . $senha . PHP_EOL);
@@ -18,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     header('Location: home.php');
     exit;
-
 } else {
     header('Location: index.php');
     exit;

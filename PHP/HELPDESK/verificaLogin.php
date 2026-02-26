@@ -1,8 +1,3 @@
 <?php
 
-session_start();
-
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] != true) {
-    header('Location: index.php');
-    exit;
-}
+require_once '../../../helpdesk/verificaLogin.php';

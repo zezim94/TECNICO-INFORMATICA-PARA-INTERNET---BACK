@@ -1,7 +1,7 @@
 <?php
 include 'verificaLogin.php';
 
-$usuarios = file('login.txt');
+$usuarios = file('../../../helpdesk/login.txt');
 ?>
 
 <html>
@@ -51,19 +51,19 @@ $usuarios = file('login.txt');
 
                                 foreach ($usuarios as $user):
 
-                            $dados = explode(';', trim($user));
+                                    $dados = explode(';', trim($user));
 
-                            ?>
+                                ?>
 
-                            <tr>
-                                <td><?= $dados[0] ?></td>
-                                <td><?= $dados[1] ?></td>
-                                <td><?= $dados[3] ?></td>
-                                <td><?= $dados[4] ?></td>
-                                <td><?= $dados[2] ?></td>
-                            </tr>
+                                    <tr>
+                                        <td><?= $dados[0] ?></td>
+                                        <td><?= $dados[1] ?></td>
+                                        <td><?= $dados[3] ?></td>
+                                        <td><?= $dados[4] ?></td>
+                                        <td><?= $dados[2] ?></td>
+                                    </tr>
 
-                        <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
 

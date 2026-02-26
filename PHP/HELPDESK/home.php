@@ -1,5 +1,5 @@
 <?php
-include 'verificaLogin.php';
+require_once 'verificaLogin.php';
 ?>
 
 <html>
@@ -22,7 +22,7 @@ include 'verificaLogin.php';
 
 <body>
 
-  <?php include 'nav.php'; ?>
+  <?php include 'nav.php';?>
 
   <div class="container">
     <div class="row">
