@@ -8,16 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = trim($_POST['senha']);
     $nivel = trim($_POST['nivel']);
 
+    $senhaHash = md5($senha);
+
     //$usuarios = file('../../../helpdesk/login.txt');
     $novoUser = fopen('../../../helpdesk/login.txt', 'a');
-    $qtd = file('../../../helpdesk/login.txt');
-    $id = count($qtd) + 1;
+    $id = uniqid();
 
-    fwrite($novoUser, $id . ';' . $nome . ';' . $nivel . ';' . $email . ';' . $senha . PHP_EOL);
+    fwrite($novoUser, $id . ';' . $nome . ';' . $nivel . ';' . $email . ';' . $senhaHash . PHP_EOL);
 
     fclose($novoUser);
 
-    header('Location: home.php');
+    header('Location: usuarios.php');
     exit;
 } else {
     header('Location: index.php');

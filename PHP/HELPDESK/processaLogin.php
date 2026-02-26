@@ -17,7 +17,7 @@ foreach ($usuarios as $user) {
 
     $dados = explode(';', trim($user));
 
-    if ($dados[3] == $email && $dados[4] == $senha) {
+    if ($dados[3] == $email && password_hash($dados[4], PASSWORD_DEFAULT)) {
         $usuarioLogado = true;
         $usuarioEncontrado = $dados;
         break;
