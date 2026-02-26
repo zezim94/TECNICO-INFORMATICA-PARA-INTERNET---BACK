@@ -1,7 +1,3 @@
-<!-- Instruções
-Podem usar o PROMPT/ALERT ou usar o getElementsById.
-Crie um algoritmo que leia uma matriz 4X4 de valores inteiros (pode ciar a matriz em uma CONST - igual ao exemplo de aula) e exiba os elementos da matriz. Utilize duas estruturas de repetição FOR -->
-
 <?php
 
 $matriz = [
@@ -18,25 +14,48 @@ $matriz = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EX2 MATRIZ 3x3</title>
+
+    <style>
+        td {
+            background-color: #116fbdff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .resul{
+            background-color: #0a8f63ff;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Matriz</h1>
+    <h1>EX2 MATRIZ 3x3</h1>
+    <table>
 
-    <?php
-    $soma = 0;
-    for ($i = 0; $i < count($matriz); $i++) {          // percorre linhas
-        for ($j = 0; $j < count($matriz[$i]); $j++) {  // percorre colunas
-            echo $matriz[$i][$j] . "&nbsp;&nbsp;&nbsp;&nbsp;";
-            $soma += $matriz[$i][$j];
+
+        <?php
+        $soma = 0;
+        for ($i = 0; $i < count($matriz); $i++) {
+            echo "<tr>";
+            $soma = 0;
+            for ($j = 0; $j < count($matriz[$i]); $j++) {
+                echo "<td>";
+                echo $matriz[$i][$j] . "&nbsp;&nbsp;&nbsp;&nbsp;";
+                $soma += $matriz[$i][$j];
+                echo "</td>";
+            }
+
+            echo "<td class='resul'>";
+            echo "Linha " . ($i + 1) . " soma: " . $soma . "<br>";
+            echo "</td>";
+
+            echo "</tr>";
         }
-        echo "<br>";
-
-        echo "Soma dos elementos da linha " . $i +1 . ": " . $matriz[$i][0] + $matriz[$i][1] + $matriz[$i][2] . "<br>";
-    }
-    ?>
+        ?>
+    </table>
 
 </body>
 

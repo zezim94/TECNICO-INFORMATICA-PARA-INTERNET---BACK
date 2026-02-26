@@ -26,19 +26,26 @@ $matriz = [
 
     <h1>Matriz</h1>
 
-    <?php
-    $soma = 0;
-    for ($i = 0; $i < count($matriz); $i++) {          // percorre linhas
-        for ($j = 0; $j < count($matriz[$i]); $j++) {  // percorre colunas
-            echo $matriz[$i][$j] . "&nbsp;&nbsp;&nbsp;&nbsp;";
-            $soma += $matriz[$i][$j];
+    <table>
+
+        <?php
+        $soma = 0;
+        for ($i = 0; $i < count($matriz); $i++) {
+            echo "<tr>";
+            for ($j = 0; $j < count($matriz[$i]); $j++) {
+                echo "<td>";
+                echo $matriz[$i][$j];
+                $soma += $matriz[$i][$j];
+                echo "</td>";
+            }
+            echo "</tr>";
         }
-        echo "<br>";
 
-    }
-
-    echo "Soma de todos os elementos da matriz: " . $soma . "<br>";
-    ?>
+        echo "<td colspan=6>";
+        echo "Soma de todos os elementos da matriz: " . $soma;
+        echo "</td>";
+        ?>
+    </table>
 
 </body>
 

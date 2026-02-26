@@ -1,7 +1,3 @@
-<!-- Instruções
-Podem usar o PROMPT/ALERT ou usar o getElementsById.
-Crie um algoritmo que leia uma matriz 4X4 de valores inteiros (pode ciar a matriz em uma CONST - igual ao exemplo de aula) e exiba os elementos da matriz. Utilize duas estruturas de repetição FOR -->
-
 <?php
 
 $matriz = [
@@ -28,20 +24,33 @@ $matriz = [
 
     <h1>Matriz</h1>
 
-    <?php
-    $maiorCinco = 0;
-    for ($i = 0; $i < count($matriz); $i++) {          // percorre linhas
-        for ($j = 0; $j < count($matriz[$i]); $j++) {  // percorre colunas
-            echo $matriz[$i][$j] . "&nbsp;&nbsp;&nbsp;&nbsp;";
-            if ($matriz[$i][$j] > 5) {
-                $maiorCinco++;
-            }
-        }
-        echo "<br>";
-    }
+    <table>
 
-    echo "Quantidade de elementos maiores que 5: " . $maiorCinco . "<br>";
-    ?>
+
+        <?php
+        $maiorCinco = 0;
+        for ($i = 0; $i < count($matriz); $i++) {
+            echo "<tr>";
+            for ($j = 0; $j < count($matriz[$i]); $j++) {
+                echo "<td>";
+                echo $matriz[$i][$j];
+                if ($matriz[$i][$j] > 5) {
+                    $maiorCinco++;
+                }
+                echo "</td>";
+            }
+            echo "<tr>";
+             
+        }
+
+        echo "<td colspan=2>";
+        echo "Quantidade de elementos maiores que 5: " . $maiorCinco ;
+        echo "</td>";
+
+        
+        ?>
+
+    </table>
 
 </body>
 

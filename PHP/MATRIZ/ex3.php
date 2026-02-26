@@ -20,26 +20,36 @@ $matriz = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EX3 MATRIZ 5x3</title>
 </head>
 
 <body>
 
-    <h1>Matriz</h1>
+    <h1>EX3 MATRIZ 5x3</h1>
 
-    <?php
-    $soma = 0;
-    for ($i = 0; $i < count($matriz); $i++) {          // percorre linhas
-        for ($j = 0; $j < count($matriz[$i]); $j++) {  // percorre colunas
-            echo $matriz[$i][$j] . "&nbsp;&nbsp;&nbsp;&nbsp;";
-            $soma += $matriz[$i][$j];
+    <table>
+
+
+        <?php
+        $soma = 0;
+        for ($i = 0; $i < count($matriz); $i++) {
+            echo '<tr>';
+            for ($j = 0; $j < count($matriz[$i]); $j++) {
+                echo '<td>';
+                echo $matriz[$i][$j] . "&nbsp;&nbsp;&nbsp;&nbsp;";
+                $soma += $matriz[$i][$j];
+                echo '</td>';
+            }
+            //echo "<br>";
+            echo '</tr>';
         }
-        echo "<br>";
-    }
 
+        echo '<td colspan=3>';
+        echo "Media de todos os elementos da matriz: " . $soma / count($matriz);
+        echo '</td>';
 
-    echo "Media de todos os elementos da matriz: " . $soma / count($matriz) . "<br>";
-    ?>
+        ?>
+    </table>
 
 </body>
 
