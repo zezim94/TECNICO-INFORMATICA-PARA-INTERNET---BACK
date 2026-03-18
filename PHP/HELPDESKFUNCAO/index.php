@@ -72,6 +72,8 @@ if (isset($login) && $login === 'invalido') {
                             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
                         </form>
 
+                        <a class="btn btn-lg btn-info btn-block" href="cadastre.php">Cadastre-se</a>
+
                     </div>
                 </div>
             </div>

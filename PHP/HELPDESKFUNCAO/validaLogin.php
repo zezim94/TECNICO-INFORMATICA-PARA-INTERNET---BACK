@@ -9,8 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
+
+
     // 🔒 Buscar apenas pelo email
-    $sql = "SELECT * FROM user WHERE email = ?";
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
@@ -20,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($resultado && mysqli_num_rows($resultado) === 1) {
 
         $linha = mysqli_fetch_assoc($resultado);
+
 
         // 🔐 Verifica senha hash
         if (password_verify($senha, $linha['senha'])) {
@@ -36,11 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // ❌ Login inválido
-   
     header('Location: index.php?login=invalido');
     exit;
-
 } else {
     header('Location: index.php');
     exit;

@@ -1,10 +1,9 @@
 <?php
-require_once 'verificaLogin.php';
-require_once 'DB/conexao.php';
+require_once '../verificaLogin.php';
+require_once '../DB/conexao.php';
 $conn = conectaBanco();
 
-require_once 'FUNCAO/funcaoUsuario.php';
-require_once 'FUNCAO/funcaoUsuario.php';
+require_once '../FUNCAO/funcaoUsuario.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];

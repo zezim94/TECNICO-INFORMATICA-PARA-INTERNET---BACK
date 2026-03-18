@@ -12,7 +12,7 @@ function buscarPorId($conn, $id)
             u.nome
             FROM chamados c
             LEFT JOIN categoria cat ON c.categoria = cat.id
-            LEFT JOIN user u ON c.idUser = u.id WHERE c.id = ?";
+            LEFT JOIN usuarios u ON c.idUser = u.id WHERE c.id = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -33,8 +33,8 @@ function buscarPorId($conn, $id)
 
 function buscarTodos($conn)
 {
-    $sql = "SELECT chamados.*, categoria.categoria, user.nome FROM chamados 
-    JOIN user ON chamados.idUser = user.id
+    $sql = "SELECT chamados.*, categoria.categoria, usuarios.nome FROM chamados 
+    JOIN usuarios ON chamados.idUser = usuarios.id
     JOIN categoria ON chamados.categoria = categoria.id
     ";
 

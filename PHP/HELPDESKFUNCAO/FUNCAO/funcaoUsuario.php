@@ -2,7 +2,7 @@
 
 function buscarPorId($conn, $id)
 {
-    $sql = "SELECT * FROM user WHERE id = ?";
+    $sql = "SELECT * FROM usuarios WHERE id = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -27,7 +27,7 @@ function buscarTodos($conn, $busca = null)
 {
 
     if (!empty($busca)) {
-        $sql = "SELECT * FROm user WHERE nome like ? OR email like ?";
+        $sql = "SELECT * FROm usuarios WHERE nome like ? OR email like ?";
 
         $stmt = mysqli_prepare($conn, $sql);
 
@@ -39,7 +39,7 @@ function buscarTodos($conn, $busca = null)
         mysqli_stmt_bind_param($stmt, 'ss', $params, $params);
 
     } else {
-        $sql = "SELECT * from user";
+        $sql = "SELECT * from usuarios";
 
         $stmt = mysqli_prepare($conn, $sql);
 
@@ -70,7 +70,7 @@ function updateUsuario($conn, $id, $nome, $usuario, $email, $nivel, $senha = nul
 
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-        $sql = "UPDATE user SET nome = ?, usuario = ?, email = ?, nivel = ?, senha = ? WHERE id = ?";
+        $sql = "UPDATE usuarios SET nome = ?, usuario = ?, email = ?, nivel = ?, senha = ? WHERE id = ?";
 
         $stmt = mysqli_prepare($conn, $sql);
 
@@ -80,7 +80,7 @@ function updateUsuario($conn, $id, $nome, $usuario, $email, $nivel, $senha = nul
         mysqli_stmt_bind_param($stmt, 'sssssi', $nome, $usuario, $email, $nivel, $senhaHash, $id);
 
     } else {
-        $sql = 'UPDATE user SET nome = ?, usuario = ?, email = ?, nivel = ? WHERE id = ?';
+        $sql = 'UPDATE usuarios SET nome = ?, usuario = ?, email = ?, nivel = ? WHERE id = ?';
 
         $stmt = mysqli_prepare($conn, $sql);
 
@@ -98,7 +98,7 @@ function updateUsuario($conn, $id, $nome, $usuario, $email, $nivel, $senha = nul
 
 
 function excluirUsuario($conn, $id){
-    $sql = 'DELETE FROM user WHERE id = ?';
+    $sql = 'DELETE FROM usuarios WHERE id = ?';
 
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -117,13 +117,32 @@ function insertUsuario($conn, $nome, $usuario, $email, $nivel, $senha){
 
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = 'INSERT INTO user (nome, usuario, email, senha, nivel) VALUES(?, ?, ?, ?, ?)';
+    $sql = 'INSERT INTO usuarios (nome, usuario, email, senha, nivel) VALUES(?, ?, ?, ?, ?)';
 
     $stmt = mysqli_prepare($conn, $sql);
 
     if(!$stmt) return false;
 
     mysqli_stmt_bind_param($stmt, 'sssss', $nome, $usuario, $email, $senhaHash, $nivel);
+
+    $resul = mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    return $resul;
+}
+
+function cadastrotUsuario($conn, $nome, $usuario, $email, $senha){
+
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+    $sql = 'INSERT INTO usuarios (nome, usuario, email, senha) VALUES(?, ?, ?, ?)';
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if(!$stmt) return false;
+
+    mysqli_stmt_bind_param($stmt, 'ssss', $nome, $usuario, $email, $senhaHash);
 
     $resul = mysqli_stmt_execute($stmt);
 
