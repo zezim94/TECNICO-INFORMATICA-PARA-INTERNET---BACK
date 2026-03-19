@@ -10,7 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    if (cadastrotUsuario($conn, $nome, $usuario, $email, $nivel, $senha)) {
+    //   $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+    if (cadastrotUsuario($conn, $nome, $usuario, $email, $senha)) {
+
+        // echo  $senhaHash;
+        // echo  $senha;
         header("Location: index.php?message=insert");
         exit;
     } else {

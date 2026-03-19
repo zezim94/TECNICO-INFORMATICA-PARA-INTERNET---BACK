@@ -24,5 +24,5 @@
 
           <button type="submit" class="btn btn-primary">Cadastrar</button>
       </form>
-        <a class="btn btn-lg btn-info btn-block" href="index.php">Voltar</a>
+      <a class="btn btn-lg btn-info btn-block" href="index.php">Voltar</a>
   </div>
