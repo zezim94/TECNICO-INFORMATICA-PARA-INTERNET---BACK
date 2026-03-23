@@ -10,7 +10,7 @@ if (!$id) {
     die("ID não informado");
 }
 
-$sql = "SELECT * FROM user WHERE id = ?";
+$sql = "SELECT * FROM usuarios WHERE id = ?";
 $stmt = mysqli_prepare($conn, $sql);
 
 mysqli_stmt_bind_param($stmt, "i", $id);
