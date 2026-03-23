@@ -1,8 +1,8 @@
 <?php
 require_once '../verificaLogin.php';
-require_once '../conexao.php';
+require_once '../DB/conexao.php';
 
-$conn = conexao();
+$conn = conectaBanco();
 
 $busca = trim($_GET['busca'] ?? '');
 $statusOptions = ['aberto', 'em andamento', 'concluido'];
@@ -11,7 +11,7 @@ if ($busca) {
   $buscaParam = "%$busca%";
   $sql = "SELECT chamados.*, usuarios.nome 
             FROM chamados 
-            JOIN usuarios ON chamados.userId = usuarios.id
+            JOIN usuarios ON chamados.idUser = usuarios.id
             WHERE usuarios.nome LIKE ? OR chamados.titulo LIKE ? OR chamados.categoria LIKE ?";
 
   $stmt = mysqli_prepare($conn, $sql);
@@ -22,7 +22,6 @@ if ($busca) {
   mysqli_stmt_execute($stmt);
   $result = mysqli_stmt_get_result($stmt);
   $chamados = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 } else {
   $sql = "SELECT chamados.*, usuarios.nome
             FROM chamados 
@@ -102,7 +101,7 @@ $statusOptions = ['aberto', 'em andamento', 'concluido'];
 
                 if (!$ehDono && !$ehAdmin)
                   continue;
-                ?>
+              ?>
 
                 <div class="col-md-4 mb-4">
                   <div class="card bg-light h-100">
@@ -230,7 +229,6 @@ $statusOptions = ['aberto', 'em andamento', 'concluido'];
 
             </div>
 
-
             <?php if ($_SESSION['nivel'] === 'admin' || $_SESSION['nivel'] === 'tecnico'): ?>
               <div class="form-group">
                 <label>Status</label>
@@ -257,36 +255,34 @@ $statusOptions = ['aberto', 'em andamento', 'concluido'];
     </div>
   </div>
 
-  <!-- jQuery, Popper e Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  <!-- Script para popular o modal -->
   <script>
     var nivelUsuario = "<?= $_SESSION['nivel'] ?>";
   </script>
   <script>
-    $('#excluirChamadoModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget);
+    $('#excluirChamadoModal').on('show.bs.modal', function(event) {
+      const button = $(event.relatedTarget);
 
-      var id = button.data('id');
-      var nome = button.data('nome');
+      let id = button.data('id');
+      let nome = button.data('nome');
 
       $('#excluirChamadoId').val(id);
       $('#excluirChamadoNome').text(nome);
     });
-    $('#editarChamadoModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget);
+    $('#editarChamadoModal').on('show.bs.modal', function(event) {
+      const button = $(event.relatedTarget);
 
-      var id = button.data('id');
-      var nome = button.data('nome');
-      var titulo = button.data('titulo');
-      var categoria = button.data('categoria');
-      var descricao = button.data('descricao');
-      var observacao = button.data('observacao');
-      var status = button.data('status');
-      var preco = button.data('preco');
+      let id = button.data('id');
+      let nome = button.data('nome');
+      let titulo = button.data('titulo');
+      let categoria = button.data('categoria');
+      let descricao = button.data('descricao');
+      let observacao = button.data('observacao');
+      let status = button.data('status');
+      let preco = button.data('preco');
 
       $('#modalChamadoId').val(id);
       $('#modalChamadoNome').val(nome);
@@ -295,16 +291,13 @@ $statusOptions = ['aberto', 'em andamento', 'concluido'];
       $('#modalChamadoDescricao').val(descricao);
       $('#modalChamadoObservacao').val(observacao);
 
-      // 🔥 AQUI A CORREÇÃO
-
       if (nivelUsuario === 'admin' || nivelUsuario === 'tecnico') {
-        // 🔥 Admin/Técnico: tudo liberado
+
         $('#modalChamadoDescricao').prop('readonly', false);
         $('#modalChamadoObservacao').prop('readonly', false);
         $('#modalChamadoDescricao').prop('required', true);
 
       } else {
-        // 👤 Usuário comum
         if (status !== 'aberto') {
           $('#modalChamadoDescricao').prop('readonly', true);
           $('#modalChamadoObservacao').prop('readonly', true);

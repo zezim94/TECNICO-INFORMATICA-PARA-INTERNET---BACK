@@ -8,9 +8,9 @@ require_once '../FUNCAO/FuncaoCategoria.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria = $_POST['categoria'];
     novaCategoria($conn, $categoria);
-    header('Location: CHAMADO/abrir_chamado.php?message=success');
+    header('Location: abrir_chamado.php?message=success');
     exit;
 } else{
-    header('Location: CHAMADO/abrir_chamado.php?message=error');
+    header('Location: abrir_chamado.php?message=error');
     exit;
 }
