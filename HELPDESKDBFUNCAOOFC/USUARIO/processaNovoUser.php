@@ -15,22 +15,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = 'INSERT INTO user(nome, usuario, email, senha, nivel) values(?, ?, ?, ?, ?)';
+    $sql = 'INSERT INTO user(nome, usuario, email, senha, nivel) values(:nome, :usuario, :email, :senha, :nivel)';
 
-    $stmt = mysqli_prepare($conn, $sql);
+    $stmt = $conn->prepare($sql);
 
-    mysqli_stmt_bind_param($stmt, 'sssss', $nome, $usuario, $email, $senhaHash, $nivel);
+    $resul = $stmt->execute([
+        'nome' => $nome,
+        'usuario' => $usuario,
+        'email' => $email,
+        'senha' => $senhaHash,
+        'nivel' => $nivel
 
-    if (mysqli_stmt_execute($stmt)) {
+    ]);
+
+    if ($resul) {
         header('Location: novoUser.php?message=sucess');
         exit;
-
     } else {
         header('Location: novoUser.php?message=error');
         exit;
     }
-
-
 } else {
     header('Location: index.php');
     exit;
