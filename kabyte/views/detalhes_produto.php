@@ -1,7 +1,7 @@
 <?php require __DIR__ . '/layout/header_public.php'; ?>
-
+ 
 <link rel="stylesheet" href="<?= BASE_URL ?>public/css/vitrine.css">
-
+ 
 <style>
     /* --- ETIQUETA DE OFERTA DOS CARDS RELACIONADOS --- */
     .badge-oferta {
@@ -19,31 +19,31 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         pointer-events: none;
     }
-
+ 
     /* --- GALERIA DE IMAGENS --- */
     .galeria-wrapper {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
-
+ 
     .prod-thumbnails {
         display: flex;
         gap: 12px;
         overflow-x: auto;
         padding-bottom: 5px;
     }
-
+ 
     /* Esconde barra de rolagem chata nos thumbnails */
     .prod-thumbnails::-webkit-scrollbar {
         height: 6px;
     }
-
+ 
     .prod-thumbnails::-webkit-scrollbar-thumb {
         background: #ccc;
         border-radius: 10px;
     }
-
+ 
     .thumb-item {
         width: 80px;
         height: 80px;
@@ -55,17 +55,17 @@
         object-fit: contain;
         transition: all 0.3s;
     }
-
+ 
     .thumb-item:hover {
         transform: translateY(-3px);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
+ 
     .thumb-item.active {
         border-color: var(--cor-primaria);
         box-shadow: 0 0 0 1px var(--cor-primaria);
     }
-
+ 
     /* =========================================
        LAYOUT DETALHES DO PRODUTO
        ========================================= */
@@ -74,13 +74,13 @@
         padding-top: 30px;
         padding-bottom: 60px;
     }
-
+ 
     .detalhe-container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
     }
-
+ 
     /* Botão Voltar */
     .btn-voltar {
         display: inline-flex;
@@ -92,11 +92,11 @@
         margin-bottom: 20px;
         transition: color 0.3s;
     }
-
+ 
     .btn-voltar:hover {
         color: var(--cor-primaria);
     }
-
+ 
     /* Card Principal do Produto */
     .produto-main {
         display: grid;
@@ -107,7 +107,7 @@
         border-radius: 20px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
     }
-
+ 
     /* Área da Imagem */
     .prod-img-big {
         display: flex;
@@ -120,25 +120,25 @@
         position: relative;
         padding: 20px;
     }
-
+ 
     .prod-img-big img {
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
         transition: transform 0.3s ease;
     }
-
+ 
     .prod-img-big:hover img {
         transform: scale(1.05);
     }
-
+ 
     /* Área de Informações */
     .prod-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
+ 
     .prod-info h1 {
         font-size: 2.2rem;
         color: var(--cor-texto-principal);
@@ -146,7 +146,7 @@
         line-height: 1.2;
         font-weight: 800;
     }
-
+ 
     .prod-cod {
         color: var(--cor-texto-muted);
         font-size: 0.95rem;
@@ -158,7 +158,7 @@
         display: inline-block;
         width: fit-content;
     }
-
+ 
     .prod-price-area {
         margin-bottom: 30px;
         background: var(--cor-fundo-area-img);
@@ -166,11 +166,11 @@
         border-radius: 12px;
         border-left: 5px solid var(--cor-primaria);
     }
-
+ 
     .prod-price-area.promo {
         border-left-color: var(--cor-oferta);
     }
-
+ 
     .big-old {
         text-decoration: line-through;
         color: var(--cor-texto-muted);
@@ -178,35 +178,35 @@
         display: block;
         margin-bottom: 5px;
     }
-
+ 
     .big-price {
         font-size: 2.8rem;
         font-weight: 900;
         color: var(--cor-primaria);
         line-height: 1;
     }
-
+ 
     .big-promo {
         color: var(--cor-oferta);
     }
-
+ 
     .prod-desc {
         color: var(--cor-texto-secundario);
         line-height: 1.8;
         margin-bottom: 40px;
         font-size: 1.05rem;
     }
-
+ 
     .prod-desc h3 {
         color: var(--cor-texto-principal);
         margin-bottom: 10px;
         font-size: 1.2rem;
     }
-
+ 
     .actions-area {
         margin-top: auto;
     }
-
+ 
     .estoque-aviso {
         color: var(--cor-primaria);
         font-weight: 700;
@@ -216,7 +216,7 @@
         align-items: center;
         gap: 8px;
     }
-
+ 
     /* Oculta os estilos do card-produto base para não quebrar o layout da página de detalhes */
     .detalhe-card-invisivel {
         border: none !important;
@@ -226,12 +226,12 @@
         display: block !important;
         width: auto !important;
     }
-
+ 
     .detalhe-card-invisivel:hover {
         transform: none !important;
         box-shadow: none !important;
     }
-
+ 
     .badge-detalhe {
         position: absolute;
         top: 20px;
@@ -247,7 +247,7 @@
         box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
         letter-spacing: 1px;
     }
-
+ 
     .detalhe-qty-control {
         display: inline-flex;
         align-items: center;
@@ -256,7 +256,7 @@
         border-radius: 50px;
         padding: 5px;
     }
-
+ 
     .detalhe-btn-qty {
         background: var(--cor-branco);
         color: var(--cor-primaria);
@@ -273,12 +273,12 @@
         align-items: center;
         justify-content: center;
     }
-
+ 
     .detalhe-btn-qty:hover {
         background: var(--cor-primaria);
         color: var(--cor-branco);
     }
-
+ 
     .detalhe-qty-display {
         min-width: 60px;
         text-align: center;
@@ -286,7 +286,7 @@
         font-weight: 800;
         color: var(--cor-texto-principal);
     }
-
+ 
     .btn-esgotado-big {
         display: inline-block;
         background: var(--cor-borda);
@@ -297,7 +297,7 @@
         font-weight: bold;
         text-transform: uppercase;
     }
-
+ 
     .section-title {
         margin: 60px 0 30px 0;
         font-size: 1.8rem;
@@ -306,41 +306,307 @@
         align-items: center;
         gap: 15px;
     }
-
+ 
     .section-title::after {
         content: "";
         flex: 1;
         height: 2px;
         background: var(--cor-borda);
     }
-
+ 
+    /* =========================================
+       RESPONSIVIDADE (TABLETS E CELULARES)
+       ========================================= */
+ 
+    /* Telas Médias (Tablets) */
     @media (max-width: 900px) {
         .produto-main {
             grid-template-columns: 1fr;
             gap: 30px;
             padding: 25px;
         }
-
+ 
         .prod-img-big {
             height: 350px;
             border: none;
             padding: 0;
         }
-
-        .prod-info h1 { font-size: 1.8rem; }
-        .big-price { font-size: 2.2rem; }
+ 
+        .prod-info h1 {
+            font-size: 1.8rem;
+        }
+ 
+        .big-price {
+            font-size: 2.2rem;
+        }
+    }
+ 
+    /* Telas Pequenas (Smartphones) */
+    @media (max-width: 600px) {
+        .detalhe-wrapper {
+            padding-top: 15px;
+            padding-bottom: 90px;
+            /* Garante que a barra flutuante do carrinho não tampe o conteúdo */
+        }
+ 
+        .detalhe-container {
+            padding: 0 15px;
+            /* Reduz a margem na lateral para aproveitar o espaço da tela */
+        }
+ 
+        .produto-main {
+            padding: 20px 15px;
+            /* Deixa o card branco menor na borda */
+            gap: 20px;
+            border-radius: 12px;
+        }
+ 
+        /* Área de Imagem Mais Compacta */
+        .prod-img-big {
+            height: 250px;
+            /* Imagem menor para o usuário não precisar rolar muito a tela */
+            border-radius: 12px;
+        }
+ 
+        .prod-img-big img {
+            max-height: 90%;
+            /* Deixa a imagem respirar um pouco dentro do quadro */
+        }
+ 
+        /* Reduz os Thumbnails (Fotos pequenas em baixo) */
+        .prod-thumbnails {
+            gap: 8px;
+        }
+ 
+        .thumb-item {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+ 
+        /* Ajustes dos Textos do Produto */
+        .prod-info h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+ 
+        .prod-cod {
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+ 
+        .prod-price-area {
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+ 
+        .big-old {
+            font-size: 1rem;
+        }
+ 
+        .big-price {
+            font-size: 2rem;
+        }
+ 
+        /* Botões de + e - (Tornar Fáceis de Tocar) */
+        .detalhe-qty-control {
+            width: 100%;
+            justify-content: space-between;
+        }
+ 
+        .detalhe-btn-qty {
+            width: 45px;
+            height: 45px;
+        }
+ 
+        .detalhe-qty-display {
+            font-size: 1.3rem;
+            min-width: 40px;
+        }
+ 
+        .estoque-aviso {
+            justify-content: center;
+            /* Centraliza a info de estoque */
+        }
+ 
+        /* Título da Seção Relacionados */
+        .section-title {
+            font-size: 1.4rem;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            /* Centraliza o título no mobile */
+        }
+ 
+        .section-title::after {
+            display: none;
+            /* Tira a linha lateral no celular para ficar mais limpo */
+        }
+ 
+        /* Produtos Relacionados - 2 por Linha (Grid) */
+        .produtos-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+ 
+        /* Ajuste fino dos cards menores (Relacionados) */
+        .card-img-area {
+            height: 120px;
+        }
+ 
+        .card-info {
+            padding: 10px;
+            flex-direction: column;
+            gap: 10px;
+        }
+ 
+        .card-nome {
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Reticências se o texto for gigante */
+        }
+ 
+        .card-preco {
+            font-size: 1rem;
+        }
+ 
+        .qty-control {
+            width: 100%;
+            justify-content: space-between;
+        }
+ 
+        .btn-qty {
+            width: 35px;
+            height: 35px;
+        }
+    }
+ 
+    /* =========================================
+       AJUSTES EXTREMOS (TELAS MINÚSCULAS ATÉ 380px)
+       ========================================= */
+    /* =========================================
+       AJUSTES EXTREMOS (TELAS MINÚSCULAS ATÉ 380px)
+       ========================================= */
+    @media (max-width: 380px) {
+        .detalhe-container {
+            padding: 0 10px;
+        }
+ 
+        .produto-main {
+            padding: 15px;
+            /* Reduz as margens internas do card principal para o conteúdo respirar */
+            gap: 15px;
+        }
+ 
+        /* 1. O VILÃO DA BARRA INFERIOR: Empilha o texto e o botão */
+        .cart-bar {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 12px;
+            gap: 10px;
+        }
+ 
+        .cart-bar>div {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+ 
+        .btn-checkout {
+            width: 100%;
+            justify-content: center;
+        }
+ 
+        /* 2. O VILÃO DA GRADE: Volta para 1 produto por linha */
+        .produtos-grid {
+            grid-template-columns: 1fr;
+        }
+ 
+        .card-img-area {
+            height: 180px;
+        }
+ 
+        /* 3. O VILÃO DAS FOTOS MENORES (Thumbnails) */
+        .prod-thumbnails {
+            flex-wrap: wrap;
+            /* Em vez de rolar pro lado, joga as fotos para a linha de baixo se não couber */
+            justify-content: center;
+            /* Centraliza as fotinhas */
+            gap: 8px;
+        }
+ 
+        .thumb-item {
+            width: 55px;
+            /* Diminui um tiquinho mais a miniatura */
+            height: 55px;
+        }
+ 
+        /* 4. O VILÃO DOS TEXTOS LONGOS (Título, Código e Descrição) */
+        .prod-info {
+            width: 100%;
+            /* Garante que a caixa de texto não ultrapasse 100% da tela */
+            max-width: 100%;
+            overflow: hidden;
+            /* Esconde qualquer coisa que tentar vazar */
+        }
+ 
+        .prod-info h1 {
+            font-size: 1.3rem;
+            word-wrap: break-word;
+        }
+ 
+        .prod-cod {
+            font-size: 0.8rem;
+            word-break: break-all;
+            white-space: normal;
+            /* Garante que o código gigante vai quebrar pra linha de baixo */
+        }
+ 
+        .prod-desc p {
+            word-wrap: break-word;
+            /* Quebra palavras muito longas na descrição */
+            overflow-wrap: break-word;
+            hyphens: auto;
+            /* Tracinho no fim da sílaba se precisar quebrar */
+            font-size: 0.95rem;
+            /* Diminui a fonte da descrição no celularzinho */
+        }
+ 
+        .big-price {
+            font-size: 1.6rem;
+        }
+ 
+        .big-old {
+            font-size: 0.9rem;
+        }
+ 
+        .prod-price-area {
+            padding: 12px;
+        }
+ 
+        /* Ajuste fino dos botões de Quantidade */
+        .detalhe-btn-qty {
+            width: 40px;
+            height: 40px;
+        }
+ 
+        .detalhe-qty-display {
+            min-width: 30px;
+            font-size: 1.2rem;
+        }
     }
 </style>
-
+ 
 <div class="detalhe-wrapper">
     <div class="detalhe-container">
-
+ 
         <a href="javascript:history.back()" class="btn-voltar">
             <i class="fas fa-arrow-left"></i> Voltar para a loja
         </a>
-
+ 
         <div class="produto-main">
-
+ 
             <div class="galeria-wrapper">
                 <div class="prod-img-big">
                     <?php
@@ -350,24 +616,26 @@
                         ? BASE_URL . "public/uploads/" . htmlspecialchars($produto['imagem'])
                         : null;
                     ?>
-
+ 
                     <?php if ($emOferta): ?>
                         <div class="badge-detalhe">OFERTA</div>
                     <?php endif; ?>
-
+ 
                     <?php if ($caminhoPrincipal): ?>
-                        <img id="imgPrincipal" src="<?= $caminhoPrincipal ?>" alt="<?= htmlspecialchars($produto['nome']) ?>">
+                        <img id="imgPrincipal" src="<?= $caminhoPrincipal ?>"
+                            alt="<?= htmlspecialchars($produto['nome']) ?>">
                     <?php else: ?>
                         <i id="imgPlaceholder" class="fas fa-image fa-7x" style="color: var(--cor-borda);"></i>
                     <?php endif; ?>
                 </div>
-
+ 
                 <?php if ($caminhoPrincipal || !empty($imagensAdicionais)): ?>
                     <div class="prod-thumbnails">
                         <?php if ($caminhoPrincipal): ?>
-                            <img src="<?= $caminhoPrincipal ?>" class="thumb-item active" onclick="trocarImagem(this.src, this)">
+                            <img src="<?= $caminhoPrincipal ?>" class="thumb-item active"
+                                onclick="trocarImagem(this.src, this)">
                         <?php endif; ?>
-
+ 
                         <?php if (!empty($imagensAdicionais)): ?>
                             <?php foreach ($imagensAdicionais as $imgExtra): ?>
                                 <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($imgExtra['imagem']) ?>"
@@ -377,11 +645,11 @@
                     </div>
                 <?php endif; ?>
             </div>
-
+ 
             <div class="prod-info">
                 <h1><?= htmlspecialchars($produto['nome']) ?></h1>
                 <div class="prod-cod">REF: <?= htmlspecialchars($produto['codigo_barras']) ?></div>
-
+ 
                 <div class="prod-price-area <?= $emOferta ? 'promo' : '' ?>">
                     <?php if ($emOferta): ?>
                         <span class="big-old">De: R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
@@ -391,25 +659,26 @@
                         <span class="big-price">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
                     <?php endif; ?>
                 </div>
-
+ 
                 <div class="prod-desc">
                     <h3>Detalhes do Produto</h3>
-                    <p><?= nl2br(htmlspecialchars($produto['descricao'] ?? 'Nenhuma descrição detalhada disponível para este item.')) ?></p>
+                    <p><?= nl2br(htmlspecialchars($produto['descricao'] ?? 'Nenhuma descrição detalhada disponível para este item.')) ?>
+                    </p>
                 </div>
-
+ 
                 <div class="actions-area">
                     <?php if ($produto['estoque'] > 0): ?>
                         <div class="estoque-aviso">
                             <i class="fas fa-check-circle"></i> Em estoque (<?= $produto['estoque'] ?> disponíveis)
                         </div>
-
+ 
                         <div class="card-produto detalhe-card-invisivel" data-id="<?= $produto['id'] ?>"
-                             data-preco="<?= $precoFinal ?>" data-nome="<?= htmlspecialchars($produto['nome']) ?>">
-                            
+                            data-preco="<?= $precoFinal ?>" data-nome="<?= htmlspecialchars($produto['nome']) ?>">
+ 
                             <?php if ($caminhoPrincipal): ?>
                                 <img src="<?= $caminhoPrincipal ?>" style="display:none;">
                             <?php endif; ?>
-
+ 
                             <div class="detalhe-qty-control">
                                 <button class="detalhe-btn-qty minus" onclick="alterarQtd(<?= $produto['id'] ?>, -1)">
                                     <i class="fas fa-minus"></i>
@@ -426,7 +695,7 @@
                 </div>
             </div>
         </div>
-
+ 
         <?php if (!empty($relacionados)): ?>
             <h3 class="section-title">Aproveite e veja também</h3>
             <div class="produtos-grid">
@@ -436,11 +705,11 @@
                     ?>
                     <div class="card-produto" data-id="<?= $p['id'] ?>" data-preco="<?= $precoRel ?>"
                         data-nome="<?= htmlspecialchars($p['nome']) ?>">
-
+ 
                         <?php if ($ofertaRel): ?>
                             <div class="badge-oferta">OFERTA</div>
                         <?php endif; ?>
-
+ 
                         <a href="<?= BASE_URL ?>produto/detalhes&id=<?= $p['id'] ?>" class="link-detalhes">
                             <div class="card-img-area">
                                 <?php if (!empty($p['imagem']) && file_exists(__DIR__ . '/../public/uploads/' . $p['imagem'])): ?>
@@ -451,7 +720,7 @@
                                 <?php endif; ?>
                             </div>
                         </a>
-
+ 
                         <div class="card-info">
                             <div>
                                 <a href="<?= BASE_URL ?>produto/detalhes&id=<?= $p['id'] ?>" class="link-detalhes">
@@ -482,10 +751,10 @@
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-
+ 
     </div>
 </div>
-
+ 
 <div id="cartBar" class="cart-bar">
     <div>
         <div class="cart-info"><span id="totalItens">0</span> itens</div>
@@ -495,10 +764,10 @@
         Ver Carrinho <i class="fas fa-shopping-basket"></i>
     </button>
 </div>
-
+ 
 <script>
     let carrinho = {};
-
+ 
     document.addEventListener("DOMContentLoaded", () => {
         const salvo = localStorage.getItem('meu_carrinho_pdv');
         if (salvo) {
@@ -512,61 +781,61 @@
             } catch (e) { console.error(e); }
         }
     });
-
+ 
     function alterarQtd(id, delta) {
         if (!carrinho[id]) carrinho[id] = 0;
         carrinho[id] += delta;
         if (carrinho[id] < 0) carrinho[id] = 0;
-
+ 
         const el = document.getElementById('qtd-' + id);
         if (el) el.innerText = carrinho[id];
-
+ 
         if (carrinho[id] === 0) delete carrinho[id];
         localStorage.setItem('meu_carrinho_pdv', JSON.stringify(carrinho));
         atualizarBarraInferior();
     }
-
+ 
     function atualizarBarraInferior() {
         let totalItens = 0;
         let totalValor = 0.0;
-
+ 
         const cards = document.querySelectorAll('.card-produto');
-
+ 
         cards.forEach(card => {
             let id = parseInt(card.getAttribute('data-id'));
             let preco = parseFloat(card.getAttribute('data-preco'));
-
+ 
             if (carrinho[id] && carrinho[id] > 0) {
                 totalValor += (carrinho[id] * preco);
             }
         });
-
+ 
         let qtdReal = 0;
         for (let key in carrinho) {
             qtdReal += carrinho[key];
         }
-
+ 
         document.getElementById('totalItens').innerText = qtdReal;
         document.getElementById('totalValor').innerText = totalValor.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-
+ 
         const headerCount = document.getElementById('headerCartCount');
         if (headerCount) headerCount.innerText = qtdReal > 0 ? qtdReal : '';
-
+ 
         const bar = document.getElementById('cartBar');
         if (qtdReal > 0) bar.classList.add('visible');
         else bar.classList.remove('visible');
     }
-
+ 
     // Função mantida para o Modal do header_public.php funcionar 100%
     async function irParaCheckout() {
         const btn = document.querySelector('.btn-checkout-modal');
-        if(btn) {
+        if (btn) {
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Aguarde...';
         }
-        
+ 
         const payload = { itens: carrinho };
-
+ 
         try {
             const res = await fetch('<?= BASE_URL ?>carrinho/salvar', {
                 method: 'POST',
@@ -578,32 +847,32 @@
                 window.location.href = '<?= BASE_URL ?>cliente/checkout_carrinho';
             } else {
                 alert('Erro: ' + dados.msg);
-                if(btn) {
+                if (btn) {
                     btn.disabled = false;
                     btn.innerHTML = '<i class="fas fa-check"></i> Ir para Pagamento';
                 }
             }
         } catch (e) {
             alert('Erro de conexão. Verifique sua internet.');
-            if(btn) {
+            if (btn) {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-check"></i> Ir para Pagamento';
             }
         }
     }
-
+ 
     // --- LÓGICA DA GALERIA DE IMAGENS ---
     function trocarImagem(novaUrl, elementoClicado) {
         const imgGrande = document.getElementById('imgPrincipal');
         if (imgGrande) {
             imgGrande.src = novaUrl;
         }
-
+ 
         const thumbnails = document.querySelectorAll('.thumb-item');
         thumbnails.forEach(thumb => thumb.classList.remove('active'));
-
+ 
         elementoClicado.classList.add('active');
     }
 </script>
-
+ 
 <?php require __DIR__ . '/layout/footer_public.php'; ?>
