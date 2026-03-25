@@ -9,9 +9,7 @@
         top: 10px;
         right: 10px;
         background-color: #e74c3c;
-        /* Forçando o Vermelho forte */
         color: #ffffff;
-        /* Forçando o Texto branco */
         padding: 4px 12px;
         border-radius: 20px;
         font-size: 0.75rem;
@@ -66,7 +64,6 @@
     .thumb-item.active {
         border-color: var(--cor-primaria);
         box-shadow: 0 0 0 1px var(--cor-primaria);
-        /* Dá um destaque extra na borda */
     }
 
     /* =========================================
@@ -74,7 +71,6 @@
        ========================================= */
     .detalhe-wrapper {
         background-color: var(--cor-fundo-area-img);
-        /* Fundo leve para destacar o card branco */
         padding-top: 30px;
         padding-bottom: 60px;
     }
@@ -134,7 +130,6 @@
 
     .prod-img-big:hover img {
         transform: scale(1.05);
-        /* Efeito de zoom suave ao passar o mouse */
     }
 
     /* Área de Informações */
@@ -157,7 +152,6 @@
         font-size: 0.95rem;
         margin-bottom: 25px;
         font-family: monospace;
-        /* Fonte técnica para código */
         background: var(--cor-fundo-qty);
         padding: 4px 10px;
         border-radius: 6px;
@@ -209,7 +203,6 @@
         font-size: 1.2rem;
     }
 
-    /* --- NOVO CONTROLE DE QUANTIDADE VIP --- */
     .actions-area {
         margin-top: auto;
     }
@@ -239,15 +232,12 @@
         box-shadow: none !important;
     }
 
-    /* --- ETIQUETA DE OFERTA EXCLUSIVA DO DETALHE --- */
     .badge-detalhe {
         position: absolute;
         top: 20px;
         right: 20px;
         background-color: #e74c3c;
-        /* Forçando a cor vermelha */
         color: #ffffff;
-        /* Letra branca */
         padding: 8px 20px;
         border-radius: 30px;
         font-size: 1.1rem;
@@ -255,11 +245,9 @@
         text-transform: uppercase;
         z-index: 10;
         box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-        /* Sombreado vermelho para dar destaque */
         letter-spacing: 1px;
     }
 
-    /* Seletor Bonito */
     .detalhe-qty-control {
         display: inline-flex;
         align-items: center;
@@ -310,7 +298,6 @@
         text-transform: uppercase;
     }
 
-    /* Seção Relacionados */
     .section-title {
         margin: 60px 0 30px 0;
         font-size: 1.8rem;
@@ -327,158 +314,21 @@
         background: var(--cor-borda);
     }
 
-    /* =========================================
-       RESPONSIVIDADE (TABLETS E CELULARES)
-       ========================================= */
-
-    /* Telas Médias (Tablets) */
     @media (max-width: 900px) {
         .produto-main {
             grid-template-columns: 1fr;
-            /* Passa a imagem para cima e info para baixo */
             gap: 30px;
             padding: 25px;
         }
 
         .prod-img-big {
-            height: 400px;
-            padding: 10px;
+            height: 350px;
+            border: none;
+            padding: 0;
         }
 
-        .prod-info h1 {
-            font-size: 1.8rem;
-        }
-
-        .big-price {
-            font-size: 2.2rem;
-        }
-    }
-
-    /* Telas Pequenas (Smartphones) */
-    @media (max-width: 600px) {
-
-        .vitrine-container,
-        .detalhe-container {
-            padding: 0 15px;
-            /* Reduz a margem lateral para ganhar espaço */
-        }
-
-        .detalhe-wrapper {
-            padding-top: 15px;
-            padding-bottom: 90px;
-            /* Dá espaço para a barra fixa do carrinho não cobrir nada */
-        }
-
-        .produto-main {
-            padding: 15px;
-            gap: 20px;
-            border-radius: 16px;
-        }
-
-        .prod-img-big {
-            height: 280px;
-            /* Evita que a imagem ocupe a tela inteira do celular */
-        }
-
-        .thumb-item {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-        }
-
-        .prod-info h1 {
-            font-size: 1.5rem;
-        }
-
-        .prod-price-area {
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .big-price {
-            font-size: 2rem;
-        }
-
-        .prod-desc {
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .detalhe-btn-qty {
-            width: 45px;
-            height: 45px;
-            font-size: 1.2rem;
-        }
-
-        .detalhe-qty-display {
-            font-size: 1.3rem;
-            min-width: 40px;
-        }
-
-        /* Ajuste crucial na Grade de Relacionados: 2 por linha no celular */
-        .produtos-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .card-img-area {
-            height: 120px;
-            /* Imagem do card menor */
-        }
-
-        .card-info {
-            padding: 10px;
-            flex-direction: column;
-            /* Coloca o botão embaixo do preço */
-            align-items: stretch;
-            gap: 10px;
-        }
-
-        .card-nome {
-            font-size: 0.85rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            /* Corta o texto com '...' se for muito grande */
-        }
-
-        .card-preco {
-            font-size: 1rem;
-        }
-
-        /* Estica o botão de quantidade no card para ficar mais fácil de tocar com o dedo */
-        .qty-control {
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .btn-qty {
-            width: 35px;
-            height: 35px;
-        }
-
-        .badge-oferta {
-            font-size: 0.65rem;
-            padding: 3px 8px;
-        }
-
-        /* Ajuste da Barra Fixa do Carrinho para não quebrar */
-        .cart-bar {
-            padding: 12px 15px;
-            flex-direction: row;
-            gap: 10px;
-        }
-
-        .cart-info,
-        .cart-total {
-            font-size: 0.9rem;
-        }
-
-        .btn-checkout {
-            padding: 8px 12px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
+        .prod-info h1 { font-size: 1.8rem; }
+        .big-price { font-size: 2.2rem; }
     }
 </style>
 
@@ -506,8 +356,7 @@
                     <?php endif; ?>
 
                     <?php if ($caminhoPrincipal): ?>
-                        <img id="imgPrincipal" src="<?= $caminhoPrincipal ?>"
-                            alt="<?= htmlspecialchars($produto['nome']) ?>">
+                        <img id="imgPrincipal" src="<?= $caminhoPrincipal ?>" alt="<?= htmlspecialchars($produto['nome']) ?>">
                     <?php else: ?>
                         <i id="imgPlaceholder" class="fas fa-image fa-7x" style="color: var(--cor-borda);"></i>
                     <?php endif; ?>
@@ -516,8 +365,7 @@
                 <?php if ($caminhoPrincipal || !empty($imagensAdicionais)): ?>
                     <div class="prod-thumbnails">
                         <?php if ($caminhoPrincipal): ?>
-                            <img src="<?= $caminhoPrincipal ?>" class="thumb-item active"
-                                onclick="trocarImagem(this.src, this)">
+                            <img src="<?= $caminhoPrincipal ?>" class="thumb-item active" onclick="trocarImagem(this.src, this)">
                         <?php endif; ?>
 
                         <?php if (!empty($imagensAdicionais)): ?>
@@ -546,8 +394,7 @@
 
                 <div class="prod-desc">
                     <h3>Detalhes do Produto</h3>
-                    <p><?= nl2br(htmlspecialchars($produto['descricao'] ?? 'Nenhuma descrição detalhada disponível para este item.')) ?>
-                    </p>
+                    <p><?= nl2br(htmlspecialchars($produto['descricao'] ?? 'Nenhuma descrição detalhada disponível para este item.')) ?></p>
                 </div>
 
                 <div class="actions-area">
@@ -557,7 +404,12 @@
                         </div>
 
                         <div class="card-produto detalhe-card-invisivel" data-id="<?= $produto['id'] ?>"
-                            data-preco="<?= $precoFinal ?>">
+                             data-preco="<?= $precoFinal ?>" data-nome="<?= htmlspecialchars($produto['nome']) ?>">
+                            
+                            <?php if ($caminhoPrincipal): ?>
+                                <img src="<?= $caminhoPrincipal ?>" style="display:none;">
+                            <?php endif; ?>
+
                             <div class="detalhe-qty-control">
                                 <button class="detalhe-btn-qty minus" onclick="alterarQtd(<?= $produto['id'] ?>, -1)">
                                     <i class="fas fa-minus"></i>
@@ -639,8 +491,8 @@
         <div class="cart-info"><span id="totalItens">0</span> itens</div>
         <div class="cart-total">Total: R$ <span id="totalValor">0,00</span></div>
     </div>
-    <button class="btn-checkout" onclick="irParaCheckout()" id="btnFinalizar">
-        Ir para Pagamento <i class="fas fa-arrow-right"></i>
+    <button class="btn-checkout" onclick="abrirModalCarrinho()" id="btnFinalizar">
+        Ver Carrinho <i class="fas fa-shopping-basket"></i>
     </button>
 </div>
 
@@ -705,10 +557,14 @@
         else bar.classList.remove('visible');
     }
 
+    // Função mantida para o Modal do header_public.php funcionar 100%
     async function irParaCheckout() {
-        const btn = document.getElementById('btnFinalizar');
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Aguarde...';
+        const btn = document.querySelector('.btn-checkout-modal');
+        if(btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Aguarde...';
+        }
+        
         const payload = { itens: carrinho };
 
         try {
@@ -722,29 +578,30 @@
                 window.location.href = '<?= BASE_URL ?>cliente/checkout_carrinho';
             } else {
                 alert('Erro: ' + dados.msg);
-                btn.disabled = false;
-                btn.innerHTML = 'Ir para Pagamento <i class="fas fa-arrow-right"></i>';
+                if(btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Ir para Pagamento';
+                }
             }
         } catch (e) {
             alert('Erro de conexão. Verifique sua internet.');
-            btn.disabled = false;
-            btn.innerHTML = 'Ir para Pagamento <i class="fas fa-arrow-right"></i>';
+            if(btn) {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-check"></i> Ir para Pagamento';
+            }
         }
     }
 
     // --- LÓGICA DA GALERIA DE IMAGENS ---
     function trocarImagem(novaUrl, elementoClicado) {
-        // 1. Troca a imagem grande do quadro principal
         const imgGrande = document.getElementById('imgPrincipal');
         if (imgGrande) {
             imgGrande.src = novaUrl;
         }
 
-        // 2. Remove a classe 'active' de todas as miniaturas
         const thumbnails = document.querySelectorAll('.thumb-item');
         thumbnails.forEach(thumb => thumb.classList.remove('active'));
 
-        // 3. Adiciona a classe 'active' na miniatura que acabou de ser clicada
         elementoClicado.classList.add('active');
     }
 </script>

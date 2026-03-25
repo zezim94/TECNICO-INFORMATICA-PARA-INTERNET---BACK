@@ -44,4 +44,3 @@ function relatorioConcluido($conn)
         return $e;
     }
 }
-

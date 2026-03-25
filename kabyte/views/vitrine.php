@@ -277,7 +277,7 @@
             <?php foreach ($categorias as $cat):
                 // Verifica se esta é a categoria que está selecionada agora
                 $isActive = (isset($_GET['categoria']) && $_GET['categoria'] == $cat['id']) ? 'active' : '';
-            ?>
+                ?>
                 <a href="<?= BASE_URL ?>vitrine&categoria=<?= $cat['id'] ?>" class="cat-pill <?= $isActive ?>">
                     <?= htmlspecialchars($cat['nome']) ?>
                 </a>
@@ -293,14 +293,15 @@ $listaBanners = json_decode($config['banners'] ?? '[]', true);
 ?>
 
 <?php if (empty($_GET['busca']) && !empty($listaBanners)): // Só exibe se NÃO for busca e TIVER banners cadastrados 
-?>
+        ?>
     <div class="banner-wrapper">
         <div class="swiper bannerSwiper">
             <div class="swiper-wrapper">
 
                 <?php foreach ($listaBanners as $bannerImagem): ?>
                     <div class="swiper-slide">
-                        <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($bannerImagem) ?>" alt="Banner Promocional KaByte">
+                        <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($bannerImagem) ?>"
+                            alt="Banner Promocional KaByte">
                     </div>
                 <?php endforeach; ?>
 
@@ -416,7 +417,7 @@ if (!empty($produtos)) {
             <?php foreach ($produtos as $p):
                 $emOferta = ($p['promocao'] == 1 && $p['preco_promocao'] > 0);
                 $precoFinal = $emOferta ? $p['preco_promocao'] : $p['preco'];
-            ?>
+                ?>
                 <div class="card-produto" data-id="<?= $p['id'] ?>" data-preco="<?= $precoFinal ?>"
                     data-nome="<?= htmlspecialchars($p['nome']) ?>">
 
@@ -474,8 +475,8 @@ if (!empty($produtos)) {
         <div class="cart-info"><span id="totalItens">0</span> itens</div>
         <div class="cart-total">Total: R$ <span id="totalValor">0,00</span></div>
     </div>
-    <button class="btn-checkout" onclick="irParaCheckout()" id="btnFinalizar">
-        Ir para Pagamento <i class="fas fa-arrow-right"></i>
+    <button class="btn-checkout" onclick="abrirModalCarrinho()" id="btnFinalizar">
+        Ver Carrinho <i class="fas fa-shopping-basket"></i>
     </button>
 </div>
 
@@ -608,9 +609,9 @@ if (!empty($produtos)) {
     }
 
     async function irParaCheckout() {
-        const btn = document.getElementById('btnFinalizar');
+        const btn = document.querySelector('.btn-checkout-modal'); // Pega o botão dentro do Modal!
         btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ...';
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Aguarde...';
 
         const payload = {
             itens: carrinho
@@ -631,7 +632,7 @@ if (!empty($produtos)) {
             } else {
                 alert('Erro: ' + dados.msg);
                 btn.disabled = false;
-                btn.innerHTML = 'Ir para Pagamento';
+                btn.innerHTML = '<i class="fas fa-check"></i> Ir para Pagamento';
             }
         } catch (e) {
             alert('Erro de conexão.');

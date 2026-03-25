@@ -8,20 +8,20 @@ $conn = conexao();
 $busca = trim($_GET['busca'] ?? '');
 $statusOptions = ['aberto', 'em andamento', 'concluido'];
 
-$chamados = buscarTodos($conn, $busca);
+$chamados = buscarTodosChamados($conn, $busca);
 
 
 $chamadoEditar = null;
 
 if (isset($_GET['editar'])) {
   $idEditar = $_GET['editar'];
-  $chamadoEditar = buscarPorId($conn, $idEditar);
+  $chamadoEditar = buscarPorIdChamados($conn, $idEditar);
 }
 $chamadoExcluir = null;
 
 if (isset($_GET['excluir'])) {
   $idExcluir = $_GET['excluir'];
-  $chamadoExcluir = buscarPorId($conn, $idExcluir);
+  $chamadoExcluir = buscarPorIdChamados($conn, $idExcluir);
 }
 ?>
 
@@ -85,12 +85,12 @@ if (isset($_GET['excluir'])) {
 
               <?php if (!empty($chamados) && is_array($chamados)): ?>
                 <?php foreach ($chamados as $chamado):
-                  $ehDono = (int) $_SESSION['id'] === (int) $chamado['userId'];
+                  $ehDono = (int) $_SESSION['id'] === (int) $chamado['userID'];
                   $ehAdmin = $_SESSION['nivel'] === 'admin' || $_SESSION['nivel'] === 'tecnico';
 
                   if (!$ehDono && !$ehAdmin)
                     continue;
-                  ?>
+                ?>
 
                   <div class="col-md-4 mb-4">
                     <div class="card bg-light h-100">
@@ -236,7 +236,7 @@ if (isset($_GET['excluir'])) {
             <div class="form-group">
               <label>Descrição</label>
               <textarea name="descricao" class="form-control"><?=
-                $chamadoEditar['descricao'] ?? '' ?></textarea>
+                                                              $chamadoEditar['descricao'] ?? '' ?></textarea>
             </div>
 
 
@@ -246,7 +246,7 @@ if (isset($_GET['excluir'])) {
               <div class="form-group">
                 <label>Observação</label>
                 <textarea name="observacao" class="form-control"><?=
-                  $chamadoEditar['statusTec'] ?? '' ?></textarea>
+                                                                  $chamadoEditar['statusTec'] ?? '' ?></textarea>
               </div>
 
               <div class="form-group">

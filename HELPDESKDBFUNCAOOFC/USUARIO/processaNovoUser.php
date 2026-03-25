@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'email' => $email,
         'senha' => $senhaHash,
         'nivel' => $nivel
-
     ]);
 
     if ($resul) {
