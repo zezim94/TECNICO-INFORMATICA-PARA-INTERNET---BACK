@@ -106,7 +106,7 @@ $usuarios = buscarUsuario($conn, $busca);
                                 if ($user['status']) {
                                     continue;
                                 }
-                                ?>
+                            ?>
                                 <tr>
                                     <td><?= $user['id'] ?></td>
                                     <td><?= htmlspecialchars($user['nome']) ?></td>
@@ -118,6 +118,11 @@ $usuarios = buscarUsuario($conn, $busca);
                                             <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                             <input type="hidden" name="nivel" value="<?= $user['nivel'] ?>">
                                             <button class="btn btn-button">Aprovar</button>
+                                        </form>
+                                        <form method="POST" action="recusar.php">
+                                            <input type="hidden" name="id" value="<?= $user['id'] ?>">
+                                            <input type="hidden" name="nivel" value="<?= $user['nivel'] ?>">
+                                            <button class="btn btn-button">Recusar</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -172,11 +177,11 @@ $usuarios = buscarUsuario($conn, $busca);
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
 
             var modal = document.getElementById('modalExcluir');
 
-            modal.addEventListener('show.bs.modal', function (event) {
+            modal.addEventListener('show.bs.modal', function(event) {
 
                 var button = event.relatedTarget;
 

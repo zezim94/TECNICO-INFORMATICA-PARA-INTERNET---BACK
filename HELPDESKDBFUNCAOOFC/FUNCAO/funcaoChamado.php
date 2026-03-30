@@ -34,7 +34,6 @@ function buscarTodosChamados($conn, $busca)
                 'status' => "%$busca%",
                 'usuario' => "%$busca%"
             ]);
-
         } else {
 
             $sql = 'SELECT c.*, u.nome as usuario FROM chamados c 
@@ -45,9 +44,8 @@ function buscarTodosChamados($conn, $busca)
         }
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     } catch (PDOException $e) {
-        echo $e->getMessage(); // 👈 ativa isso pra debug
+        echo $e->getMessage();
         return false;
     }
 }
@@ -64,7 +62,6 @@ function criar($conn, $titulo, $categoria, $descricao, $idUser)
         'descricao' => $descricao,
         'userId' => $idUser
     ]);
-
 }
 
 function update($conn, $titulo, $categoria, $descricao, $observacao, $status, $preco, $id)

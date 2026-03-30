@@ -141,8 +141,6 @@ function contarRegistros($conn, $tabela)
 
 function aprovar($conn, $nivel, $id)
 {
-
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         require_once '../conexao.php';

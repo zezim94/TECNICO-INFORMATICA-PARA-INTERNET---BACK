@@ -10,11 +10,12 @@ $totalChamado = contarRegistros($conn, 'chamados');
 $usuarios = buscarUsuario($conn);
 $totalAprovar = 0;
 
-foreach($usuarios as $user){
-  if(!$user['status']){
-$totalAprovar ++;
+foreach ($usuarios as $user) {
+  if (!$user['status']) {
+    $totalAprovar++;
   }
 }
+
 ?>
 <html>
 
@@ -72,13 +73,29 @@ $totalAprovar ++;
           <div class="card-body">
             <div class="row">
 
-              <div class="col-2 d-flex justify-content-center">
+              <div class="<?php if ($_SESSION['nivel'] == 'tecnico') {
+                            echo "col-4";
+                          } else if ($_SESSION['nivel'] == 'user') {
+
+                            echo "col-6";
+                          } else if ($_SESSION['nivel'] == 'admin') {
+                            echo "col-2";
+                          }
+                          ?> d-flex justify-content-center">
                 <a href="../CHAMADO/abrir_chamado.php">
                   <img src="../img/formulario_abrir_chamado.png" width="70" height="70">
                 </a>
               </div>
 
-              <div class="col-2 d-flex justify-content-center">
+              <div class="<?php if ($_SESSION['nivel'] == 'tecnico') {
+                            echo "col-4";
+                          } else if ($_SESSION['nivel'] == 'user') {
+
+                            echo "col-6";
+                          } else if ($_SESSION['nivel'] == 'admin') {
+                            echo "col-2";
+                          }
+                          ?> d-flex justify-content-center">
                 <a href="../CHAMADO/consultar_chamado.php" class="icon-wrapper">
 
                   <?php if ($_SESSION['nivel'] == 'admin' || $_SESSION['nivel'] == 'tecnico'): ?>
@@ -90,7 +107,7 @@ $totalAprovar ++;
               </div>
 
               <?php if ($_SESSION['nivel'] == 'admin' || $_SESSION['nivel'] == 'tecnico') { ?>
-                <div class="col-2 d-flex justify-content-center">
+                <div class="<?php if ($_SESSION['nivel'] == 'admin') {echo "col-2";} else if($_SESSION['nivel'] == 'tecnico') {echo "col-4";} ?> d-flex justify-content-center">
                   <a href="../CHAMADO/relatorio.php" class="icon-wrapper">
 
                     <?php if ($_SESSION['nivel'] == 'admin' || $_SESSION['nivel'] == 'tecnico'): ?>
