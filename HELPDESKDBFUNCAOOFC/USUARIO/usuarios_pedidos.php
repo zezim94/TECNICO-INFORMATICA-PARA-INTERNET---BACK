@@ -45,7 +45,7 @@ $usuarios = buscarUsuario($conn, $busca);
 
             <!-- FORM DE BUSCA -->
             <div class="card-body border-bottom">
-                <form action="usuarios.php" method="GET" class="row g-3">
+                <form action="usuarios_pedidos.php" method="GET" class="row g-3">
 
                     <div class="col-md-10">
                         <label class="form-label">Pesquisar usuário</label>

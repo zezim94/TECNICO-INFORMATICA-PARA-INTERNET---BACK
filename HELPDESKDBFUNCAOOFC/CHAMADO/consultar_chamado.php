@@ -199,7 +199,6 @@ if (isset($_GET['excluir'])) {
                 readonly>
             </div>
 
-            <div class="form-group">
               <label>Equipamento</label>
               <input type="text" name="titulo" class="form-control" required
                 value="<?= $chamadoEditar['titulo'] ?? '' ?>">
