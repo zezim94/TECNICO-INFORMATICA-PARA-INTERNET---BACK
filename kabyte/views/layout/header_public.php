@@ -34,8 +34,7 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
 
         body {
             background-color:
-                <?= $config['cor_fundo'] ?? '#f4f7f6' ?>
-            ;
+                <?= $config['cor_fundo'] ?? '#f4f7f6' ?>;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,8 +46,7 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
            ========================================= */
         .vitrine-header {
             background-color:
-                <?= $config['cor_header'] ?? '#2c3e50' ?>
-            ;
+                <?= $config['cor_header'] ?? '#2c3e50' ?>;
             position: relative;
             display: flex;
             justify-content: space-between;
@@ -204,8 +202,7 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
         .cart-modal-header {
             padding: 15px 20px;
             background:
-                <?= $config['cor_header'] ?? '#2c3e50' ?>
-            ;
+                <?= $config['cor_header'] ?? '#2c3e50' ?>;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -411,8 +408,7 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
 
             .header-nav {
                 background-color:
-                    <?= $config['cor_header'] ?? '#2c3e50' ?>
-                ;
+                    <?= $config['cor_header'] ?? '#2c3e50' ?>;
             }
         }
 
@@ -452,7 +448,9 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
                 ?>
 
                 <?php if (!empty($caminhoLimpo) && file_exists($caminhoFisico)): ?>
-                    <img src="<?= BASE_URL . $caminhoBanco ?>" alt="<?= htmlspecialchars($config['nome_loja']) ?>">
+                    <a href="<?= BASE_URL ?>vitrine">
+                        <img src="<?= BASE_URL . $caminhoBanco ?>" alt="<?= htmlspecialchars($config['nome_loja']) ?>">
+                    </a>
                 <?php else: ?>
                     <i class="fas fa-bicycle"></i> <span
                         style="margin-left:8px; font-size:1.2rem; color:white;"><?= htmlspecialchars($config['nome_loja']) ?></span>
@@ -626,7 +624,9 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
             }
 
             body.innerHTML = html;
-            document.getElementById('cartModalTotal').innerText = total.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+            document.getElementById('cartModalTotal').innerText = total.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2
+            });
         }
 
         // Atalho: Altera a quantidade e já redesenha o modal na hora
@@ -642,14 +642,22 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
             if (typeof carrinho !== 'undefined') {
                 delete carrinho[id]; // Apaga do objeto
 
-                // Zera o contador visual na vitrine
+                // 1. Zera o contador visual na grade normal da vitrine (ou página de detalhes)
                 const elVitrine = document.getElementById('qtd-' + id);
                 if (elVitrine) elVitrine.innerText = '0';
 
+                // 2. Zera o contador visual se o produto também estiver no Carrossel de Ofertas
+                const elCarrossel = document.getElementById('qtd-car-' + id);
+                if (elCarrossel) elCarrossel.innerText = '0';
+
                 // Salva e atualiza
                 localStorage.setItem('meu_carrinho_pdv', JSON.stringify(carrinho));
-                if (typeof atualizarBarraInferior === 'function') atualizarBarraInferior();
-                renderizarModalCarrinho(); // Recarrega o modal
+
+                if (typeof atualizarBarraInferior === 'function') {
+                    atualizarBarraInferior();
+                }
+
+                renderizarModalCarrinho(); // Recarrega o modal instantaneamente
             }
         }
 
@@ -658,7 +666,9 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
             if (confirm('Tem certeza que deseja esvaziar todo o carrinho?')) {
                 if (typeof carrinho !== 'undefined') {
                     // Limpa o objeto JS e o LocalStorage
-                    for (let prop in carrinho) { delete carrinho[prop]; }
+                    for (let prop in carrinho) {
+                        delete carrinho[prop];
+                    }
                     localStorage.removeItem('meu_carrinho_pdv');
 
                     // Zera todos os números verdes das bolinhas da vitrine
@@ -673,4 +683,5 @@ $ehPaginaVitrine = ($rotaAtual == 'vitrine');
     </script>
 
 </body>
+
 </html>
