@@ -2,7 +2,7 @@
 
 class Animal
 {
-    public $cor = 'braco';
+    public $cor = '';
     public $latir = '';
     public $estado = '';
     public $nome = '';
