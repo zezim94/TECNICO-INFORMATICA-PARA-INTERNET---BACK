@@ -25,7 +25,7 @@ class Monstro
         $_SESSION['img'] = $this->img;
         $_SESSION['nome'] = $this->nome;
         $_SESSION['descricao'] = $this->descricao;
-        $_SESSION['caracteristicas'] = $this->caracteristicas;
+        $_SESSION['caracteristicas'] = (array) $this->caracteristicas;
         $_SESSION['resumo'] = $this->resumo;
     }
 }

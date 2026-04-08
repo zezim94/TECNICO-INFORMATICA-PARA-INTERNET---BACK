@@ -196,12 +196,22 @@ function personagem($tipo)
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $tipo = $_POST['personagem'];
-
-$personagem = new Monstro();
-
-    if ($personagem == '') {
+    if (!isset($_POST['personagem']) || empty($_POST['personagem'])) {
         header('Location: index.php');
         exit;
     }
+
+    $tipo = $_POST['personagem'];
+
+    $personagem = personagem($tipo);
+
+    if (!$personagem) {
+        header('Location: index.php');
+        exit;
+    }
+
+    $personagem->session();
+
+    header('Location: index.php');
+    exit;
 }

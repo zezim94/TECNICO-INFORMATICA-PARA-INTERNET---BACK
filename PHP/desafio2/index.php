@@ -6,7 +6,7 @@ $selecionado = $_SESSION['personagem'] ?? '';
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
+<head> n
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -56,10 +56,13 @@ $selecionado = $_SESSION['personagem'] ?? '';
                     <div class="caracteristicas">
                         <h3>Caracteristicas:</h3>
                         <p> <?php
-                            foreach ($_SESSION['caracteristicas'] as $value) {
-                                foreach ($value as $v) {
-                                    echo $v . "<br>";
-                                }
+                            echo "<pre>";
+                            var_dump($_SESSION['caracteristicas']);
+                            echo "</pre>";
+                            exit;
+                            foreach ($_SESSION['caracteristicas'] as $v) {
+
+                                echo $v . "<br>";
                             }
 
                             ?> </p>
