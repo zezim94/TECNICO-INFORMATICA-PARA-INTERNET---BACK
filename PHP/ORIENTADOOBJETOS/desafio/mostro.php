@@ -20,8 +20,9 @@ class Monstro
         $this->resumo = $resumo;
     }
 
-    function session()
+    function session($tipo)
     {
+        $_SESSION['personagem'] = $tipo;
         $_SESSION['img'] = $this->img;
         $_SESSION['nome'] = $this->nome;
         $_SESSION['descricao'] = $this->descricao;
@@ -29,5 +30,4 @@ class Monstro
         $_SESSION['resumo'] = $this->resumo;
     }
 }
-
 
