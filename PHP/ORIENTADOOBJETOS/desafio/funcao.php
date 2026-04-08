@@ -205,12 +205,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $personagem = personagem($tipo);
 
+
     if (!$personagem) {
         header('Location: index.php');
         exit;
     }
 
-    $personagem->session();
+
+    $personagem->session($tipo);
 
     header('Location: index.php');
     exit;
