@@ -4,7 +4,7 @@ session_start();
 
 $personagem = $_POST['personagem'];
 
-function freddyKrueger($dados)
+function freddyKrueger()
 {
 
     $img = 'img/FreddyKrueger.webp';
@@ -32,7 +32,7 @@ function freddyKrueger($dados)
     header('Location: index.php');
 }
 
-function jasonVoorhees($dados)
+function jasonVoorhees()
 {
 
     $img = 'img/JasonVoorhees.avif';
@@ -59,7 +59,7 @@ function jasonVoorhees($dados)
     header('Location: index.php');
 }
 
-function michaelMyers($dados)
+function michaelMyers()
 {
 
     $img = 'img/MichaelMyers.jpg';
@@ -86,7 +86,7 @@ function michaelMyers($dados)
     header('Location: index.php');
 }
 
-function pennywise($dados)
+function pennywise()
 {
     $img = 'img/Pennywise.jpg';
 
@@ -112,7 +112,7 @@ function pennywise($dados)
     header('Location: index.php');
 }
 
-function chucky($dados)
+function chucky()
 {
 
     $img = 'img/Chucky.jpeg';
@@ -139,7 +139,7 @@ function chucky($dados)
     header('Location: index.php');
 }
 
-function leatherface($dados)
+function leatherface()
 {
 
     $img = 'img/Leatherface.webp';
@@ -166,7 +166,7 @@ function leatherface($dados)
     header('Location: index.php');
 }
 
-function ghostface($dados)
+function ghostface()
 {
 
     $img = 'img/Ghostface.jpg';
@@ -193,7 +193,7 @@ function ghostface($dados)
     header('Location: index.php');
 }
 
-function reganMacNeil($dados)
+function reganMacNeil()
 {
 
     $img = 'img/ReganMacNeil.jpg';
@@ -220,7 +220,7 @@ function reganMacNeil($dados)
     header('Location: index.php');
 }
 
-function annabelle($dados)
+function annabelle()
 {
 
     $img = 'img/Annabelle.webp';
@@ -247,7 +247,7 @@ function annabelle($dados)
     header('Location: index.php');
 }
 
-function samaraMorgan($dados)
+function samaraMorgan()
 {
 
     $img = 'img/SamaraMorgan.webp';

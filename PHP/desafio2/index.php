@@ -56,13 +56,13 @@ $selecionado = $_SESSION['personagem'] ?? '';
                     <div class="caracteristicas">
                         <h3>Caracteristicas:</h3>
                         <p> <?php
-                        foreach ($_SESSION['caracteristicas'] as $value) {
-                            foreach ($value as $v) {
-                                echo $v . "<br>";
+                            foreach ($_SESSION['caracteristicas'] as $value) {
+                                foreach ($value as $v) {
+                                    echo $v . "<br>";
+                                }
                             }
-                        }
 
-                        ?> </p>
+                            ?> </p>
                     </div>
 
                     <div class="resumo">
@@ -71,9 +71,8 @@ $selecionado = $_SESSION['personagem'] ?? '';
                     </div>
                 </div>
 
-                <?php
+            <?php
             }
-
             ?>
         </div>
     </div>
