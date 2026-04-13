@@ -84,7 +84,6 @@ class Pessoa
     }
 }
 
-
 $p1 = new Pessoa;
 
 echo $p1->getNome("João");
