@@ -82,11 +82,12 @@ class Pessoa
 
 $p1 = new Pessoa;
 
-// echo $p1->getNome("João");
-// echo "<br>";
-// echo $p1->getIdade(15);
-// echo "<br>";
-// echo $p1->getClube("Brasil");
+echo $p1->getNome("João");
+echo "<br>";
+echo $p1->getIdade(15);
+echo "<br>";
+echo $p1->getClube("Brasil");
+echo "<hr>";
 
 $p1->__set("nome", "Joanas");
 $p1->__set("idade", 20);
