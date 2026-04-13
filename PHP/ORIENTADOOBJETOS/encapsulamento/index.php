@@ -15,6 +15,7 @@ class Pessoa
     private $idade;
     protected $clube;
     private  $senha = 123;
+    public $bandeira = "<img src='img/brasil.webp' alt='brasil' width=150px>";
 
     public function getNome($nome)
     {
@@ -56,6 +57,10 @@ class Pessoa
         return $this->senha;
     }
 
+    public function bandeira(){
+        return $this->bandeira;
+    }
+
     public function apresentaPessoa()
     {
         $num = rand(1, 9);
@@ -91,13 +96,15 @@ echo "<hr>";
 
 $p1->__set("nome", "Joanas");
 $p1->__set("idade", 20);
-$p1->__set("clube", "Santos");
+$p1->__set("clube", "Brasil");
 
 echo "Nome: " . $p1->__get("nome");
 echo "<br>";
 echo "Idade: " . $p1->__get("idade");
 echo "<br>";
 echo "Clube: " . $p1->__get("clube");
+echo "<br>";
+echo $p1->bandeira();
 
 echo "<hr>";
 
