@@ -111,3 +111,4 @@ echo "<hr>";
 echo $p1->apresentaPessoa();
 echo "<br>";
 echo $p1->verifica();
+// echo $p1->bandeira;
