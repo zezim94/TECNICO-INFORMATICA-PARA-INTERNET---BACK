@@ -3,8 +3,8 @@
 abstract class Pessoa
 {
     public $nome; // público todo mundo acessa
-    protected $sobrenome; // protected somente pai acessa
-    private $cpf = 12345678910; // smmente o pai acessa
+    protected $sobrenome; // protected somente pai e filho acessa
+    private $cpf = 12345678910; // somente o pai acessa
 
     public function __construct() {}
 
@@ -18,11 +18,11 @@ abstract class Pessoa
     //     return $this->$atr;
     // }
 
-    private function falarPessoa(){ // como esta peivate o filho não acessa diretamente, somente por uma outra função
+    private function falarPessoa()
+    { // como esta peivate o filho não acessa diretamente, somente por uma outra função publica
         echo $this->nome . " " . $this->sobrenome;
     }
 }
-
 
 class Filho extends Pessoa
 {
@@ -42,8 +42,9 @@ class Filho extends Pessoa
         return $this->nome . " " . $this->sobrenome . " " . $this->cpf;
     }
 
-    public function falarPessoa(){ // mesmo tendo a função no pai, o filho consegue alterar a exibir
-        echo "Olá ".$this->nome . " " . $this->sobrenome;
+    public function falarPessoa()
+    { // mesmo tendo a função no pai, o filho consegue alterar a exibir - polimorfismo
+        echo "Olá " . $this->nome . " " . $this->sobrenome;
     }
 }
 
