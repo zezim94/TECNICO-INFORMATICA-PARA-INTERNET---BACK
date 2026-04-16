@@ -229,16 +229,18 @@ insert into
         valorHora
     )
 values (
-        'Cadeiras 2 posições' 50,
+        'Cadeiras 2 posições',
+        50,
         2.00
     ),
     (
-        'Cadeiras 4 posições' 100,
+        'Cadeiras 4 posições',
+        100,
         3.50
     ),
-    ('Guarda sol P' 40, 2.00),
-    ('Guarda sol G' 60, 3.00),
-    ('Mesinha' 30, 1.50);
+    ('Guarda sol P', 40, 2.00),
+    ('Guarda sol G', 60, 3.00),
+    ('Mesinha', 30, 1.50);
 
 /* 5 e 6 */
 insert into
@@ -538,8 +540,82 @@ update equipamento set qtd = (qtd - 2) where idEquipamento = 2;
 
 update equipamento set qtd = (qtd - 2) where idEquipamento = 4;
 
+/* atualizando o valor a pagar */
+UPDATE aluguel a
+JOIN (
+    SELECT idAluguel, SUM(valorItem) AS total
+    FROM aluguelEquipamento
+    GROUP BY
+        idAluguel
+) ae ON a.idAluguel = ae.idAluguel
+SET
+    a.valorAPagar = ae.total;
+
 /* 9 */
-select nome, cpf from cliente order by nome;
+select nomeCliente, cpf from cliente order by nome;
+
+/* UOL */
+select nomeCliente, cpf from cliente WHERE email like '%uol%' order by nome;
+
+/* GMAIL */
+select nomeCliente, cpf from cliente WHERE email like '%gmail%' order by nome;
+
+/* HOTMAIL */
+select nomeCliente, cpf from cliente WHERE email like '%hotmail%' order by nome;
+
+/* IG */
+select nomeCliente, cpf from cliente WHERE email like '%ig%' order by nome;
 
 /* 10 */
-select nome, celular from funcionario order by nome;
+select nomeFuncionario, celular from funcionario order by nome;
+
+/* Visão geral */
+SELECT
+    f.nomeFuncionario funcionário,
+    c.nomeCliente cliente,
+    e.nomeEquipamento equipamento,
+    e.valorHora 'valor hora',
+    date_format(
+        a.dataHoraRetirada,
+        '%d/%m/%Y'
+    ) as 'data retirada',
+    ae.qtd as 'quantidade'
+FROM
+    aluguelEquipamento ae
+    LEFT JOIN aluguel a ON ae.idAluguel = a.idAluguel
+    LEFT JOIN equipamento e ON ae.idEquipamento = e.idEquipamento
+    LEFT JOIN cliente c ON a.idCliente = c.idCliente
+    LEFT JOIN funcionario f ON a.idFuncionario = f.idFuncionario;
+
+/* Aluguel por cliente */
+SELECT c.nomeCliente cliente, e.nomeEquipamento equipamento, sum(e.valorHora * ae.qtd) as 'total a pagar', date_format(
+        a.dataHoraRetirada, '%d/%m/%Y'
+    ) as 'data retirada'
+FROM
+    aluguelEquipamento ae
+    LEFT JOIN aluguel a ON ae.idAluguel = a.idAluguel
+    LEFT JOIN equipamento e ON ae.idEquipamento = e.idEquipamento
+    LEFT JOIN cliente c ON a.idCliente = c.idCliente
+GROUP BY
+    c.nomeCliente
+ORDER BY 'data retirada';
+
+/* aluguel por funcionário */
+SELECT
+    f.nomeFuncionario funcionário,
+    e.nomeEquipamento equipamento,
+    sum(ae.qtd * ae.valorUnitario) as total,
+    sum(ae.qtd) as 'total equipamento',
+    date_format(
+        a.dataHoraRetirada,
+        '%d/%m/%Y'
+    ) as 'data retirada'
+FROM
+    aluguelEquipamento ae
+    LEFT JOIN aluguel a ON ae.idAluguel = a.idAluguel
+    LEFT JOIN equipamento e ON ae.idEquipamento = e.idEquipamento
+    LEFT JOIN funcionario f ON a.idFuncionario = f.idFuncionario
+GROUP BY
+    f.nomeFuncionario,
+    a.dataHoraRetirada
+ORDER BY 'data retirada';
