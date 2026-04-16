@@ -2,7 +2,7 @@
 
 abstract class Operacoes
 {
-    public static $n1;
+    public static $n1 = 50;
     public static $n2;
     public static function soma($n1, $n2)
     {

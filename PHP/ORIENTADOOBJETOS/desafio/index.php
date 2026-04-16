@@ -46,6 +46,7 @@ $selecionado = $_SESSION['personagem'] ?? '';
                         <p> <?= $_SESSION['nome'] ?> </p>
                     </div>
                 </div>
+                
 
                 <div class="detalhes">
                     <div class="descricao">

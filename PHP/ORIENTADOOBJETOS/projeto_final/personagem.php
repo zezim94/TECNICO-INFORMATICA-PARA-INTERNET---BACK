@@ -7,7 +7,7 @@ class Personagem extends Person implements Img
 
     public function pegarImagem()
     {
-        return "<img src='img/img.jpg' alt='imagem'>";
+        return '<img src="" alt="">';
     }
 
     public function __set($atr, $valor)
@@ -19,5 +19,14 @@ class Personagem extends Person implements Img
     {
 
         return $this->$valor;
+    }
+
+     function session($tipo)
+    {
+        $_SESSION['personagem'] = $tipo;
+        $_SESSION['img'] = $this->pegarImagem();
+        $_SESSION['nome'] = $this->nome;
+        $_SESSION['caracteristica'] = $this->caracteristica;
+       
     }
 }
