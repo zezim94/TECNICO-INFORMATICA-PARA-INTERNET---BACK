@@ -1,198 +1,119 @@
 <?php
 
-require_once 'mostro.php';
+require_once 'personagem.php';
 
 function personagem($tipo)
 {
     switch ($tipo) {
-        case 'FreddyKrueger':
-            return new Monstro(
-                'img/FreddyKrueger.webp',
 
-                'Freddy Krueger',
-
-                'Assassino que ataca suas vítimas nos sonhos.',
-
+        case 'Mickey':
+            return new Personagem(
+                'img/mickey.jpg',
+                'Mickey Mouse',
+                'Personagem clássico da Disney.',
                 [
-                    '1' => 'Rosto queimado',
-                    '2' => 'Suéter listrado vermelho e verde',
-                    '3' => 'Chapéu fedora',
-                    '4' => 'Luva com lâminas'
+                    'Orelhas redondas',
+                    'Roupa vermelha',
+                    'Luvas brancas'
                 ],
-
-                'Após ser morto por pais vingativos, Freddy retorna como entidade sobrenatural que mata adolescentes enquanto dormem, na franquia A Hora do Pesadelo.'
-            );
-            break;
-
-        case 'JasonVoorhees':
-
-            return new Monstro(
-                'img/JasonVoorhees.avif',
-
-                'Jason Voorhees',
-
-                'Assassino silencioso do acampamento Crystal Lake.',
-
-                [
-                    '1' => 'Máscara de hóquei',
-                    '2' => 'força sobre-humana',
-                    '3' => 'uso de facão'
-                ],
-
-                'Considerado morto quando criança, Jason retorna para se vingar de todos que se aproximam do lago onde teria se afogado.'
+                'Criado por Walt Disney, é o mascote oficial da Disney.'
             );
 
-            break;
-        case 'MichaelMyers':
-            return new Monstro(
-                'img/MichaelMyers.jpg',
-
-                'Michael Myers',
-
-                'Assassino mascarado conhecido como “A Forma”',
-
+        case 'SpongeBob':
+            return new Personagem(
+                'img/bobesponja.jpg',
+                'Bob Esponja',
+                'Esponja que vive no fundo do mar.',
                 [
-                    '1' => 'Máscara branca sem expressão',
-                    '2' => 'fmacacão azul',
-                    '3' => 'comportamento silencioso.'
+                    'Calça quadrada',
+                    'Trabalha no Siri Cascudo',
+                    'Muito otimista'
                 ],
-
-                'Após matar a própria irmã quando criança, escapa de um hospital psiquiátrico e passa a perseguir Laurie Strode.'
+                'Vive na Fenda do Biquíni com seus amigos.'
             );
 
-            break;
-        case 'Pennywise':
-            return new Monstro(
-                'img/Pennywise.jpg',
-
-                'Pennywise',
-
-                'Entidade cósmica que assume a forma de palhaço.',
-
+        case 'Goku':
+            return new Personagem(
+                'img/goku.png',
+                'Goku',
+                'Guerreiro Saiyajin.',
                 [
-                    '1' => 'Balão vermelho',
-                    '2' => 'sorriso macabro',
-                    '3' => 'manipulação de medos'
+                    'Super força',
+                    'Transformações',
+                    'Ama lutar'
                 ],
-
-                'Em It, aterroriza as crianças da cidade de Derry, alimentando-se do medo delas.'
+                'Protagonista de Dragon Ball.'
             );
 
-            break;
-        case 'Chucky':
-            return new Monstro(
-                'img/Chucky.jpeg',
-
-                'Chucky',
-
-                'Boneco possuído por um assassino em série.',
-
+        case 'Naruto':
+            return new Personagem(
+                'img/naruto.jpg',
+                'Naruto Uzumaki',
+                'Ninja da Vila da Folha.',
                 [
-                    '1' => 'Aparência infantil',
-                    '2' => 'faca na mão',
-                    '3' => 'humor sarcástico'
+                    'Raposa de nove caudas',
+                    'Rasengan',
+                    'Nunca desiste'
                 ],
-
-                'O espírito do criminoso Charles Lee Ray transfere sua alma para um boneco, iniciando uma série de assassinatos.'
+                'Sonha em se tornar Hokage.'
             );
 
-            break;
-        case 'Leatherface':
-            return new Monstro(
-                'img/Leatherface.webp',
-
-                'Leatherface',
-
-                'Assassino canibal do interior do Texas.',
-
+        case 'Batman':
+            return new Personagem(
+                'img/batman.jpg',
+                'Batman',
+                'Herói de Gotham.',
                 [
-                    '1' => 'Máscara feita de pele humana',
-                    '2' => 'motosserrra',
-                    '3' => 'comportamento brutal'
+                    'Sem poderes',
+                    'Muito inteligente',
+                    'Usa gadgets'
                 ],
-
-                'Membro de uma família perturbada, caça viajantes que cruzam seu caminho.',
+                'Combate o crime usando estratégia e tecnologia.'
             );
 
-            break;
-        case 'Ghostface':
-            return new Monstro(
-                'img/Ghostface.jpg',
-
-                'Ghostface',
-
-                'Assassino mascarado da franquia Pânico.',
-
+        case 'Elsa':
+            return new Personagem(
+                'img/elsa.jpg',
+                'Elsa',
+                'Rainha do gelo.',
                 [
-                    '1' => 'Máscara branca alongada',
-                    '2' => 'manto preto',
-                    '3' => 'ligações ameaçadoras'
+                    'Poderes de gelo',
+                    'Canta "Let It Go"',
+                    'Controla neve'
                 ],
-
-                'Diferentes pessoas assumem a identidade de Ghostface para cometer assassinatos inspirados em filmes de terror.'
+                'Personagem do filme Frozen.'
             );
 
-            break;
-        case 'ReganMacNeil':
-            return new Monstro(
-                'img/ReganMacNeil.jpg',
-
-                'Regan MacNeil',
-
-                'Menina possuída por uma entidade demoníaca.',
-
+        case 'Shrek':
+            return new Personagem(
+                'img/shrek.jpg',
+                'Shrek',
+                'Ogro que vive no pântano.',
                 [
-                    '1' => 'Voz alterada',
-                    '2' => 'comportamento agressivo',
-                    '3' => 'fenômenos sobrenaturais'
+                    'Grande e forte',
+                    'Mal-humorado',
+                    'Coração bom'
                 ],
-
-                'Em O Exorcista, sua possessão leva dois padres a realizarem um exorcismo dramático.'
-            );
-            break;
-        case 'Annabelle':
-            return new Monstro(
-                'img/Annabelle.webp',
-
-                'Annabelle',
-
-                'Boneca supostamente possuída por entidade demoníaca.',
-
-                [
-                    '1' => 'Aparência infantil perturbadora',
-                    '2' => 'presença silenciosa',
-                    '3' => 'eventos paranormais'
-                ],
-
-                'Parte do universo Invocação do Mal, está ligada a diversos acontecimentos sobrenaturais investigados pelos Warren.'
-            );
-            break;
-
-        case 'SamaraMorgan':
-            return new Monstro(
-                'img/SamaraMorgan.webp',
-
-                'Samara Morgan',
-
-                'Espírito vingativo ligado a uma fita amaldiçoada.',
-
-                [
-                    '1' => 'Cabelos longos cobrindo o rosto',
-                    '2' => 'vestido branco sujo',
-                    '3' => 'aparição em telas'
-                ],
-
-                'Quem assiste ao vídeo amaldiçoado recebe uma ligação dizendo que morrerá em sete dias.'
+                'Vive aventuras com o Burro.'
             );
 
-            break;
+        case 'Homer':
+            return new Personagem(
+                'img/homer.png',
+                'Homer Simpson',
+                'Pai da família Simpson.',
+                [
+                    'Ama donuts',
+                    'Trabalha na usina',
+                    'Engraçado'
+                ],
+                'Personagem de Os Simpsons.'
+            );
 
         default:
-            echo 'Error';
-            break;
+            return null;
     }
 }
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -205,12 +126,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $personagem = personagem($tipo);
 
-
     if (!$personagem) {
         header('Location: index.php');
         exit;
     }
-
 
     $personagem->session($tipo);
 

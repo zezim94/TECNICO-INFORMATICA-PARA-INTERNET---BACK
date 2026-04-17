@@ -1,32 +1,36 @@
 <?php
+session_start();
 require_once "basePerson.php";
 require_once "classImag.php";
 
-class Personagem extends Person implements Img
+class Personagem extends Person
 {
+    public $img;
+    public $descricao;
+    public $caracteristicas;
+    public $resumo;
+
+    public function __construct($img, $nome, $descricao, $caracteristicas, $resumo)
+    {
+        $this->img = $img;
+        $this->nome = $nome;
+        $this->descricao = $descricao;
+        $this->caracteristicas = $caracteristicas;
+        $this->resumo = $resumo;
+    }
 
     public function pegarImagem()
     {
-        return '<img src="" alt="">';
+        return $this->img;
     }
 
-    public function __set($atr, $valor)
-    {
-
-        return $this->$atr = $valor;
-    }
-    public function __get($valor)
-    {
-
-        return $this->$valor;
-    }
-
-     function session($tipo)
+    function session($tipo)
     {
         $_SESSION['personagem'] = $tipo;
         $_SESSION['img'] = $this->pegarImagem();
         $_SESSION['nome'] = $this->nome;
-        $_SESSION['caracteristica'] = $this->caracteristica;
-       
+        $_SESSION['descricao'] = $this->descricao;
+        $_SESSION['caracteristicas'] = $this->caracteristicas;
+        $_SESSION['resumo'] = $this->resumo;
     }
 }

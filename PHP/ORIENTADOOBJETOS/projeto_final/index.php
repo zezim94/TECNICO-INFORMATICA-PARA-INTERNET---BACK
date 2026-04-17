@@ -1,5 +1,6 @@
 <?php
-require_once "personagem.php";
+session_start();
+$selecionado = $_SESSION['personagem'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -8,31 +9,70 @@ require_once "personagem.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personagem</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Personagens</title>
 </head>
 
 <body>
 
-    <h1>Personagem</h1>
+    <div class="container">
+        <form action="funcao.php" method="POST">
+            <select name="personagem" id="personagens">
+                <option value="">Selecione um personagem...</option>
 
-    <?php
-    $img = new Personagem('nome', 'caracteristica');
+                <option value="Mickey" <?= $selecionado == 'Mickey' ? 'selected' : '' ?>>Mickey Mouse</option>
+                <option value="SpongeBob" <?= $selecionado == 'SpongeBob' ? 'selected' : '' ?>>Bob Esponja</option>
+                <option value="Goku" <?= $selecionado == 'Goku' ? 'selected' : '' ?>>Goku</option>
+                <option value="Naruto" <?= $selecionado == 'Naruto' ? 'selected' : '' ?>>Naruto</option>
+                <option value="Batman" <?= $selecionado == 'Batman' ? 'selected' : '' ?>>Batman</option>
+                <option value="Elsa" <?= $selecionado == 'Elsa' ? 'selected' : '' ?>>Elsa</option>
+                <option value="Shrek" <?= $selecionado == 'Shrek' ? 'selected' : '' ?>>Shrek</option>
+                <option value="Homer" <?= $selecionado == 'Homer' ? 'selected' : '' ?>>Homer Simpson</option>
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
 
-    echo $img->pegarImagem();
+        <div class="exibir">
+            <?php
 
-    echo "<br>";
-
-    $img->__set('nome', 'Bob');
-    $img->__set('caracteristica', 'amarelo');
-
-    echo "<br>";
-    echo $img->__get('nome');
-    echo "<br>";
-    echo $img->__get('caracteristica');
-
-    ?>
+            if (isset($_SESSION['img'])) { ?>
+                <div class="img">
+                   <img src="<?= $_SESSION['img'] ?>" alt="<?= $_SESSION['nome'] ?>">
+                    <div class="nome">
+                        <p> <?= $_SESSION['nome'] ?> </p>
+                    </div>
+                </div>
 
 
+                <div class="detalhes">
+                    <div class="descricao">
+                        <h3>Descrição:</h3>
+                        <p> <?= $_SESSION['descricao'] ?> </p>
+                    </div>
+
+                    <div class="caracteristicas">
+                        <h3>Caracteristicas:</h3>
+                        <p> <?php
+                        foreach ($_SESSION['caracteristicas'] as $v) {
+
+                            echo $v . "<br>";
+
+                        }
+
+                        ?> </p>
+                    </div>
+
+                    <div class="resumo">
+                        <h3>Resumo:</h3>
+                        <p> <?= $_SESSION['resumo'] ?> </p>
+                    </div>
+                </div>
+
+                <?php
+            }
+            ?>
+        </div>
+    </div>
 
 </body>
 
