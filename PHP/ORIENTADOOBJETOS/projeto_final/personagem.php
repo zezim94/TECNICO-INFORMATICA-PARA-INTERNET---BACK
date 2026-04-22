@@ -3,11 +3,10 @@ session_start();
 require_once "basePerson.php";
 require_once "classImag.php";
 
-class Personagem extends Person
+class Personagem extends Person implements Img
 {
     public $img;
     public $descricao;
-    public $caracteristicas;
     public $resumo;
 
     public function __construct($img, $nome, $descricao, $caracteristicas, $resumo)
