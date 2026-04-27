@@ -279,7 +279,7 @@ insert into
         qtd
     )
 values (2, 2, 7.00, 3.50, 2),
-values (4, 2, 3.00, 3.00, 1);
+ (4, 2, 3.00, 3.00, 1);
 
 update equipamento set qtd = (qtd - 1) where idEquipamento = 1;
 
